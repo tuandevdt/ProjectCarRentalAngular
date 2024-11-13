@@ -1,0 +1,21 @@
+.max-w-6xl {
+    max-width: 1280px;
+  }
+  
+  #slider-category {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #slider-category > div {
+    flex: 0 0 calc(10%);
+    margin-right: 4.6%;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(180, 180, 180, 0.336);
+    border-radius: 10px;
+  }
+  
+  #slider-category > div:last-child {
+    margin-right: 0;
+  }
+  

@@ -1,0 +1,42 @@
+<div class="bg-white rounded-lg shadow-md p-4">
+    <div class="flex items-center mb-4">
+        <a routerLink="/detail" class="block max-h-[180px] overflow-hidden rounded-md">
+            <img src="{{url}}" alt="Vinfast VF8 Plus 2022" class="w-full object-cover rounded-t-md">
+        </a>
+    </div>
+    <div class="bg-white rounded-lg">
+        <div class="flex items-center mb-4">
+            <div>
+                <h3 class="text-lg font-bold">{{name}}</h3>
+                <p class="text-gray-500 text-sm">Quận 1</p>
+            </div>
+        </div>
+        <div class="items-center mb-4">
+            <p class="line-through text-gray-500 mr-2">{{(price * 2) | number}}<span class="text-base">₫</span></p>
+            <p class="text-xl text-green-500 font-bold mb-4">{{ price | number }}<span
+                    class="text-base">₫</span>/<small>24h</small></p>
+            <div class="flex items-center">
+                <i class='bx bx-user text-green-500'></i>
+                <p class="max-w-full truncate">{{isSave}}</p>
+                <button type="button" (click)="handleFavorite()"
+                    class="px-5 py-2.5 rounded-lg text-white text-sm tracking-wider font-medium border border-current outline-none bg-blue-700 hover:bg-blue-800 active:bg-blue-700">Favorite</button>
+
+            </div>
+            <hr>
+            <div class="flex justify-between items-center gap-4 mt-4">
+                <div class="flex items-center">
+                    <i class='bx bx-user text-green-500'></i>
+                    <p class="max-w-full truncate">5 chỗ</p>
+                </div>
+                <div class="flex items-center">
+                    <i class='bx bx-scatter-chart text-green-500'></i>
+                    <p class="max-w-full truncate">Số tự động</p>
+                </div>
+                <div class="flex items-center">
+                    <i class='bx bxs-ev-station text-green-500'></i>
+                    <p class="max-w-full truncate">Điện</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
