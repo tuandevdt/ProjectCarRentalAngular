@@ -7,15 +7,14 @@
     justify-content: space-between;
   }
   
-  #slider-category > div {
+  #slider-category app-slider-category-item {
     flex: 0 0 calc(10%);
-    margin-right: 4.6%;
+    margin-right: 4.5%;
     margin-bottom: 1rem;
     border: 1px solid rgba(180, 180, 180, 0.336);
     border-radius: 10px;
   }
   
-  #slider-category > div:last-child {
+  #slider-category app-slider-category-item:last-child {
     margin-right: 0;
   }
-  

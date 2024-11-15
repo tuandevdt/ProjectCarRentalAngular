@@ -7,8 +7,12 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductsComponent } from './components/user/products/products.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RootComponent } from './root/root.component';
-import { DashboardComponent } from './adminServer/dashboard/dashboard.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { DetailComponent } from './components/user/detail/detail.component';
+import { UserManagerComponent } from './components/admin/user-manager/user-manager.component';
+import { CategoryManagerComponent } from './components/admin/category-manager/category-manager.component';
+import { ProductManagerComponent } from './components/admin/product-manager/product-manager.component';
+import { OrderManagerComponent } from './components/admin/order-manager/order-manager.component';
 
 
 @Component({
@@ -25,6 +29,10 @@ import { DetailComponent } from './components/user/detail/detail.component';
     PageNotFoundComponent,
     RootComponent,
     DashboardComponent,
+    UserManagerComponent,
+    CategoryManagerComponent,
+    ProductManagerComponent,
+    OrderManagerComponent
 
   ],
   templateUrl: './app.component.html',
@@ -32,4 +40,5 @@ import { DetailComponent } from './components/user/detail/detail.component';
 })
 export class AppComponent {
   title = 'client';
+
 }

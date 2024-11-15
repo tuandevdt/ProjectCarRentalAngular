@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductHotsComponent } from '../homeComponent/product-hots/product-hots.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -13,7 +13,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './products.component.css'
 })
 export class ProductsComponent {
+  constructor(private router: Router) { }
+  // router = inject(Router);
   productName: string = "";
+  id: any;
   originalProducts = [
     {
       id: 1,
@@ -81,8 +84,11 @@ export class ProductsComponent {
         item.name.toLowerCase().includes(this.productName.toLowerCase())
       );
         console.log(this.products);
+        this.router.navigate(["products"], {
+          queryParams: {name: this.productName}
+        });
   }
-  getData(data: any) {
+  getData(data: any) {    
     let index = this.products.findIndex((item) => {
       return item.id === data.id;
     })

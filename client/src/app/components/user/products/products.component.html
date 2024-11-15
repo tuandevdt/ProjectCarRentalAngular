@@ -12,73 +12,55 @@
     </button>
   </div>
   <div class="flex justify-between items-center p-4 bg-white shadow-md rounded-lg">
-    <div class="flex items-center space-x-4">
-      <select class="px-4 py-2 bg-green-500 text-white rounded-full focus:outline-none">
+    <div class="flex items-center space-x-4"> <select
+        class="px-3 py-1 bg-[#00C48C] text-white rounded-full focus:outline-none">
         <option value="">Tất cả</option>
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
         <option value="option3">Option 3</option>
-      </select>
-    </div>
-    <div class="flex items-center space-x-4">
-      <select class="px-4 py-2 bg-green-500 text-white rounded-full focus:outline-none">
+      </select> <select
+        class="px-3 py-1 bg-white text-[#00C48C] rounded-full border border-[#00C48C] focus:outline-none">
         <option value="">Số chỗ</option>
         <option value="2">2 chỗ</option>
         <option value="4">4 chỗ</option>
         <option value="7">7 chỗ</option>
-      </select>
-    </div>
-    <div class="flex items-center space-x-4">
-      <select class="px-4 py-2 bg-green-500 text-white rounded-full focus:outline-none">
+      </select> <select
+        class="px-3 py-1 bg-white text-[#00C48C] rounded-full border border-[#00C48C] focus:outline-none">
         <option value="">Hàng xe</option>
         <option value="sedan">Sedan</option>
         <option value="suv">SUV</option>
         <option value="hatchback">Hatchback</option>
-      </select>
-    </div>
-    <div class="flex items-center space-x-4">
-      <select class="px-4 py-2 bg-green-500 text-white rounded-full focus:outline-none">
+      </select> <select
+        class="px-3 py-1 bg-white text-[#00C48C] rounded-full border border-[#00C48C] focus:outline-none">
         <option value="">Loại xe</option>
         <option value="electric">Điện</option>
         <option value="hybrid">Hybrid</option>
         <option value="gasoline">Xăng</option>
-      </select>
-    </div>
-    <div class="flex items-center space-x-4">
-      <select class="px-4 py-2 bg-green-500 text-white rounded-full focus:outline-none">
+      </select> <select
+        class="px-3 py-1 bg-white text-[#00C48C] rounded-full border border-[#00C48C] focus:outline-none">
         <option value="">Nhiên liệu</option>
         <option value="petrol">Xăng</option>
         <option value="diesel">Dầu</option>
         <option value="electric">Điện</option>
-      </select>
-    </div>
-    <div class="flex items-center space-x-4">
-      <select class="px-4 py-2 bg-green-500 text-white rounded-full focus:outline-none">
+      </select> <select
+        class="px-3 py-1 bg-white text-[#00C48C] rounded-full border border-[#00C48C] focus:outline-none">
         <option value="">Khu vực xe</option>
         <option value="hanoi">Hà Nội</option>
         <option value="hochiminh">Hồ Chí Minh</option>
         <option value="danang">Đà Nẵng</option>
-      </select>
-    </div>
-    <div class="flex items-center space-x-4">
-      <select class="px-4 py-2 bg-green-500 text-white rounded-full focus:outline-none">
+      </select> </div>
+    <div class="flex items-center space-x-4"> <select
+        class="px-3 py-1 bg-white text-[#00C48C] rounded-full border border-[#00C48C] focus:outline-none">
         <option value="">Sắp xếp</option>
         <option value="price-asc">Giá tăng dần</option>
         <option value="price-desc">Giá giảm dần</option>
         <option value="rating">Đánh giá</option>
-      </select>
-    </div>
+      </select> </div>
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6">
-    <app-product-item 
-    (isSaveEvent)="getData($event)"
-    [name]="item.name" 
-    [isSave]="item.isSave" 
-    [price]="item.price" 
-    [url]="item.url"
-    [productId]="item.id"
-      *ngFor="let item of products">
+    <app-product-item (isSaveEvent)="getData($event)" [name]="item.name" [isSave]="item.isSave" [price]="item.price"
+      [url]="item.url" [productId]="item.id" *ngFor="let item of products">
     </app-product-item>
   </div>
 </div>

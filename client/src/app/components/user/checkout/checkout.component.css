@@ -1,0 +1,22 @@
+i {
+    font-size: 1.5rem;
+}
+a {
+    color: #0CAF7F;
+}
+.i-green {
+    color: #0CAF7F;
+    font-size: 2rem;
+}
+.linner-gray {
+    width: 100%;
+    height: 2px;
+    background: #d8d8d8;
+    margin: 15px 0px;
+}
+.linner-green {
+    width: 100%;
+    height: 2px;
+    background: #0CAF7F;
+    margin: 15px 0px;
+}

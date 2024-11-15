@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-slider-category-item',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './slider-category-item.component.css'
 })
 export class SliderCategoryItemComponent {
-
+ @Input() name: string = '';
+ @Input() image: string = '';
 }

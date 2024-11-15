@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SliderComponent } from '../slider/slider.component';
 import { ProductHotsComponent } from '../product-hots/product-hots.component';
@@ -24,8 +24,22 @@ declare function alertHomePage(): void;
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
- ngOnInit(): void {//chỉ gọi 1 lần, nếu input thì gọi onChange
-   alertHomePage();
+export class HomeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
+  name: String = "Tuan Dev";
+  handleClick() {
+    this.name = "Doan Thanh Tuấn";
+  }
+ ngOnInit(): void {//chỉ gọi 1 lần, gọi khi khởi tạo 
+  //  alertHomePage();
+  console.log('ngOnInit');
+ }
+ ngOnChanges(changes: SimpleChanges): void {//nếu input thay đổi thì gọi onChange
+  console.log('ngOnChanges');
+ }
+ ngDoCheck(): void { //gọi khi phát hiện thay đổi dữ liệu
+  console.log('ngDoCheck');
+ }
+ ngOnDestroy(): void {//gọi khi component bị xóa
+  console.log('ngOnDestroy');
  }
 }

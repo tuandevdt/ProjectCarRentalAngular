@@ -1,262 +1,413 @@
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        gridTemplateRows: {
-          '[auto,auto,1fr]': 'auto auto 1fr',
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
 <div class="bg-white">
-    <div class="pt-6">
-      <nav aria-label="Breadcrumb">
-        <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <li>
-            <div class="flex items-center">
-              <a href="#" class="mr-2 text-sm font-medium text-gray-900">Men</a>
-              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-              </svg>
-            </div>
-          </li>
-          <li>
-            <div class="flex items-center">
-              <a href="#" class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
-              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-              </svg>
-            </div>
-          </li>
-  
-          <li class="text-sm">
-            <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
-          </li>
-        </ol>
-      </nav>
-  
-      <!-- Image gallery -->
-      <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-        <div class="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
-          <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="size-full object-cover object-center">
-        </div>
-        <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-          <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-            <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="size-full object-cover object-center">
+  <div class="pt-6">
+    <nav aria-label="Breadcrumb">
+      <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <li>
+          <div class="flex items-center">
+            <a href="#" class="mr-2 text-sm font-medium text-gray-900">Men</a>
+            <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true"
+              class="h-5 w-4 text-gray-300">
+              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+            </svg>
           </div>
-          <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-            <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="size-full object-cover object-center">
+        </li>
+        <li>
+          <div class="flex items-center">
+            <a href="#" class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
+            <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true"
+              class="h-5 w-4 text-gray-300">
+              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+            </svg>
+          </div>
+        </li>
+
+        <li class="text-sm">
+          <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- Image gallery -->
+    <div id="grid-images" class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+      <div class="aspect-h-4 aspect-w-6 overflow-hidden rounded-lg lg:block"> <img
+          src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
+          alt="Car image" class="w-full h-full object-cover object-center">
+      </div>
+      <div class="grid grid-cols-1 gap-y-8 lg:grid">
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg"> <img
+            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
+            alt="Car image" class="w-full h-full object-cover object-center" alt="Black t-shirt"
+            class="w-full h-full object-cover object-center"> </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg"> <img
+            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
+            alt="Car image" class="w-full h-full object-cover object-center" alt="Gray t-shirt"
+            class="w-full h-full object-cover object-center"> </div>
+      </div>
+      <div class="grid grid-cols-1 gap-y-8 lg:grid">
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg"> <img
+            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
+            alt="Car image" class="w-full h-full object-cover object-center" alt="Black t-shirt"
+            class="w-full h-full object-cover object-center"> </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg"> <img
+            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
+            alt="Car image" class="w-full h-full object-cover object-center" alt="Gray t-shirt"
+            class="w-full h-full object-cover object-center"> </div>
+      </div>
+    </div>
+    <div>
+      <form action="">
+        <input type="text" name="q">
+      <button type="submit">search</button>
+      </form>
+    </div>
+    <!-- Product info -->
+    <div
+      class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
+      <div class="lg:col-span-2 lg:pr-8 items-center">
+        <div class="w-full flex lg:col-span-2 lg:pr-8 items-center justify-between">
+          <div>
+            <div class="flex lg:col-span-2 lg:pr-8 items-center">
+              <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Id: {{id}}, BMW 320I 2024</h1> <img
+                alt="Thuê xe tự lái thoải mái bonbon | Bonboncar"
+                src="https://www.bonboncar.vn/_next/image?url=%2Ficons%2Ficon-xe-xin.png&w=96&q=75" class="ml-4 h-6">
+            </div>
+            <span id="location"><i class='bx bxs-location-plus'></i> 196/2 Trần Thị Cờ, Phường Thới An, Quận 12</span>
+          </div>
+          <div id="share-icon" class="flex lg:col-span-2 lg:pr-8 items-center">
+            <i class='bx bxs-share-alt'></i>
+            <span>Chia sẻ</span>
           </div>
         </div>
-        <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-          <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="size-full object-cover object-center">
+        <div class="w-full flex lg:col-span-2 lg:pr-8 items-center justify-between mt-10">
+          <div>
+            <h1 class="font-bold text-xl">Đặc điểm</h1>
+            <span class="liner-green"></span>
+            <div class="grid grid-cols-4 gap-4 mt-4">
+              <div class="flex space-x-2">
+                <i class="bx bxs-car text-green-500 text-2xl"></i>
+                <div>
+                  <div class="text-gray-700"><small>Số ghế</small></div>
+                  <div class="text-gray-800 font-medium">5 chỗ</div>
+                </div>
+              </div>
+              <div class="flex space-x-2">
+                <i class="bx bx-signal-5 text-blue-500 text-2xl"></i>
+                <div>
+                  <div class="text-gray-700"><small>Truyền động</small></div>
+                  <span class="text-gray-700 font-medium">Số tự động</span>
+                </div>
+              </div>
+              <div class="flex space-x-2">
+                <i class="bx bx-gas-pump text-yellow-500 text-2xl"></i>
+                <div>
+                  <div class="text-gray-700"><small>Nhiên liệu</small></div>
+                  <span class="text-gray-700 font-medium">Xăng</span>
+                </div>
+              </div>
+              <div class="flex space-x-2">
+                <i class='bx bxs-rename text-2xl'></i>
+                <div>
+                  <div class="text-gray-700"><small>Tiêu hao</small></div>
+                  <span class="text-gray-700 font-medium">6.4l/100km</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:col-span-2 lg:pr-8 mt-10">
+          <h1 class="font-bold text-xl">Mô tả</h1>
+          <span class="liner-green"></span>
+          <p class="mt-4">BMW 320i là một trong những mẫu xe nổi bật thuộc dòng BMW 3 Series, vốn là dòng sedan hạng
+            sang và thể thao được yêu thích của hãng xe BMW từ Đức. BMW 320i thường nằm ở phân khúc trung cấp trong dòng
+            3 Series, mang lại sự kết hợp hài hòa giữa hiệu suất, tiện nghi và tính thể thao.</p>
+        </div>
+        <div class="w-full lg:col-span-2 lg:pr-8 mt-10">
+          <h1 class="font-bold text-xl">Các tiện nghi khác</h1>
+          <span class="liner-green"></span>
+          <div class="mt-4">
+            <div id="comfort" class="grid grid-cols-4 gap-4">
+              <div class="flex items-center space-x-2"> <i class="bx bxs-car"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Bán đỗ</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class='bx bx-bluetooth' ></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Bluetooth</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-camera-home"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Camera 360</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-camera-off"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Camera cấp lé</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-video"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Camera hành trình</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-camera-movie"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Camera Lui</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class='bx bx-podcast'></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Cảm biến lốp</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class='bx bxl-trip-advisor'></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Cảm biến va chạm</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-shield"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Cảnh báo tốc độ</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-parking"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Cửa sổ trời</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-memory-card"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Định vị GPS</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-cloud"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">ETC</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-parking"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Lốp dự phòng</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-disc"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Màn hình DVD</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class='bx bx-usb'></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Khe cắm USB</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2"> <i class="bx bxs-shield"></i>
+                <div>
+                  <div class="text-gray-700 font-medium">Túi khí an toàn</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:col-span-2 lg:pr-8 mt-10">
+          <h1 class="font-bold text-xl">Thông tin chủ xe</h1>
+          <span class="liner-green"></span>
+          <div class="flex mt-4 items-center">
+            <div class="circle">
+              <div class="circle-small"></div>
+            </div>
+            <p>Xe được vận hành bởi BonbonCar</p>
+          </div>
+        </div>
+        <div class="w-full lg:col-span-2 lg:pr-8 mt-10">
+          <h1 class="font-bold text-xl">Điều khoản</h1>
+          <span class="liner-green"></span>
+          <p class="mt-4">Quy định khác:</p>
+          <ul class="list-disc pl-5">
+            <li>Sử dụng xe đúng mục đích.</li>
+            <li>Không sử dụng xe thuê vào mục đích phi pháp, trái pháp luật.</li>
+            <li>Không sử dụng xe thuê để cầm cố, thế chấp.</li>
+            <li>Không hút thuốc, nhả kẹo cao su, xả rác trong xe.</li>
+            <li>Không chở hàng quốc cấm dễ cháy nổ.</li>
+            <li>Không chở hoa quả, thực phẩm nặng mùi trong xe.</li>
+            <li>Khi trả xe, nếu xe bẩn hoặc có mùi trong xe, khách hàng vui lòng vệ sinh xe sạch sẽ hoặc gửi phụ thu phí vệ sinh xe.</li>
+            <li>Xe được giới hạn di chuyển ở mức 400km cho 24h, và lần lượt là 250km, 300km, 350 km cho gói 4h, 8h, 12h.</li>
+        </ul> 
+          <p>Trân trọng cảm ơn, chúc quý khách hàng có những chuyến đi tuyệt vời !</p>
+        </div>
+        <div class="w-full lg:col-span-2 lg:pr-8 mt-10">
+          <h1 class="font-bold text-xl">Chính sách hủy chuyến</h1>
+          <span class="liner-green"></span>
+          <table class="w-full border border-gray-300 rounded-md mt-4">
+            <thead>
+              <tr class="bg-gray-200">
+                <th class="text-left p-2 rounded-t-md">Thời Điểm Hủy Chuyến</th>
+                <th class="text-left p-2 rounded-t-md">Khách Thuê Hủy Chuyến</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-300">
+                <td class="p-2">Trước Chuyến Đi > 5 Ngày</td>
+                <td class="p-2">
+                  <div class="flex items-center space-x-2">
+                    <i class="bx bx-check text-green-500"></i>
+                    <span class="text-green-500 font-medium">Hoàn tiền giữ chỗ 100%</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-300">
+                <td class="p-2">Trong Vòng 5 Ngày Trước Chuyến Đi</td>
+                <td class="p-2">
+                  <div class="flex items-center space-x-2">
+                    <i class="bx bx-x text-red-500"></i>
+                    <span class="text-red-500 font-medium">Không hoàn tiền</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-  
-      <!-- Product info -->
-      <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
-        <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-          <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Basic Tee 6-Pack</h1>
+      <!-- Options -->
+      <div class="mt-4 lg:row-span-3 lg:mt-0 shadow-sm p-2 shadow-gray-500">
+        <div class="bg-white rounded-lg max-w-md mx-auto">
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="flex flex-col items-center">
+              <span class="w-full line-through text-gray-500"><small>1200K/4 giờ</small></span>
+              <span class="w-full font-medium text-[#0CAF7F]"><span class="text-2xl">1080K</span>/4 giờ</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="w-full line-through text-gray-500"><small>1600/8 giờ</small></span>
+              <span class="w-full text-gray-500"><span>1520K</span>/8 giờ</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="flex flex-col items-center">
+              <span class="w-full line-through text-gray-500"><small>1600/12 giờ</small></span>
+              <span class="w-full text-gray-500"><span>1520K</span>/12 giờ</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="w-full line-through text-gray-500"><small>1600/24 giờ</small></span>
+              <span class="w-full text-gray-500"><span>1520K</span>/24 giờ</span>
+            </div>
+          </div>
         </div>
-  
-        <!-- Options -->
-        <div class="mt-4 lg:row-span-3 lg:mt-0">
-          <h2 class="sr-only">Product information</h2>
-          <p class="text-3xl tracking-tight text-gray-900">$192</p>
-  
-          <!-- Reviews -->
-          <div class="mt-6">
-            <h3 class="sr-only">Reviews</h3>
-            <div class="flex items-center">
-              <div class="flex items-center">
-                <!-- Active: "text-gray-900", Default: "text-gray-200" -->
-                <svg class="size-5 shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                </svg>
-                <svg class="size-5 shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                </svg>
-                <svg class="size-5 shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                </svg>
-                <svg class="size-5 shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                </svg>
-                <svg class="size-5 shrink-0 text-gray-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                </svg>
+        
+
+        <!-- Reviews -->
+        <div class="mt-6 overflow-hidden">
+          <div class="w-full bg-white rounded-lg">
+            <div class="mb-4">
+              <h3 class=" font-bold text-xl">Thời gian thuê</h3>
+              <div class="gap-4">
+                <h1 class="font-bold text-lg">Từ</h1>
+                <div class="flex relative border border-gray-300 rounded-lg">
+                  <div class="w-full"> <input type="date"
+                      class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value="2024-11-14"> <i
+                      class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                  </div>
+                  <div class="w-full"> <input type="time"
+                      class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value="14:00"> <i
+                      class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i> </div>
+                </div>
+                <h1 class="font-bold text-lg">Đến</h1>
+                <div class="flex relative border border-gray-300 rounded-lg">
+                  <div class="w-full"> <input type="date"
+                      class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value="2024-11-16"> <i
+                      class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                  </div>
+                  <div class="w-full"> <input type="time"
+                      class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value="18:00"> <i
+                      class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i> </div>
+                </div>
               </div>
-              <p class="sr-only">4 out of 5 stars</p>
-              <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
             </div>
           </div>
-  
-          <form class="mt-10">
-            <!-- Colors -->
-            <div>
-              <h3 class="text-sm font-medium text-gray-900">Color</h3>
-  
-              <fieldset aria-label="Choose a color" class="mt-4">
-                <div class="flex items-center space-x-3">
-                  <!-- Active and Checked: "ring ring-offset-1" -->
-                  <label aria-label="White" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
-                    <input type="radio" name="color-choice" value="White" class="sr-only">
-                    <span aria-hidden="true" class="size-8 rounded-full border border-black/10 bg-white"></span>
-                  </label>
-                  <!-- Active and Checked: "ring ring-offset-1" -->
-                  <label aria-label="Gray" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
-                    <input type="radio" name="color-choice" value="Gray" class="sr-only">
-                    <span aria-hidden="true" class="size-8 rounded-full border border-black/10 bg-gray-200"></span>
-                  </label>
-                  <!-- Active and Checked: "ring ring-offset-1" -->
-                  <label aria-label="Black" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-900 focus:outline-none">
-                    <input type="radio" name="color-choice" value="Black" class="sr-only">
-                    <span aria-hidden="true" class="size-8 rounded-full border border-black/10 bg-gray-900"></span>
-                  </label>
-                </div>
-              </fieldset>
-            </div>
-  
-            <!-- Sizes -->
-            <div class="mt-10">
-              <div class="flex items-center justify-between">
-                <h3 class="text-sm font-medium text-gray-900">Size</h3>
-                <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
-              </div>
-  
-              <fieldset aria-label="Choose a size" class="mt-4">
-                <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                  <!-- Active: "ring-2 ring-indigo-500" -->
-                  <label class="group relative flex cursor-not-allowed items-center justify-center rounded-md border bg-gray-50 px-4 py-3 text-sm font-medium uppercase text-gray-200 hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                    <input type="radio" name="size-choice" value="XXS" disabled class="sr-only">
-                    <span>XXS</span>
-                    <span aria-hidden="true" class="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200">
-                      <svg class="absolute inset-0 size-full stroke-2 text-gray-200" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                        <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
-                      </svg>
-                    </span>
-                  </label>
-                  <!-- Active: "ring-2 ring-indigo-500" -->
-                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                    <input type="radio" name="size-choice" value="XS" class="sr-only">
-                    <span>XS</span>
-                    <!--
-                      Active: "border", Not Active: "border-2"
-                      Checked: "border-indigo-500", Not Checked: "border-transparent"
-                    -->
-                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                  </label>
-                  <!-- Active: "ring-2 ring-indigo-500" -->
-                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                    <input type="radio" name="size-choice" value="S" class="sr-only">
-                    <span>S</span>
-                    <!--
-                      Active: "border", Not Active: "border-2"
-                      Checked: "border-indigo-500", Not Checked: "border-transparent"
-                    -->
-                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                  </label>
-                  <!-- Active: "ring-2 ring-indigo-500" -->
-                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                    <input type="radio" name="size-choice" value="M" class="sr-only">
-                    <span>M</span>
-                    <!--
-                      Active: "border", Not Active: "border-2"
-                      Checked: "border-indigo-500", Not Checked: "border-transparent"
-                    -->
-                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                  </label>
-                  <!-- Active: "ring-2 ring-indigo-500" -->
-                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                    <input type="radio" name="size-choice" value="L" class="sr-only">
-                    <span>L</span>
-                    <!--
-                      Active: "border", Not Active: "border-2"
-                      Checked: "border-indigo-500", Not Checked: "border-transparent"
-                    -->
-                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                  </label>
-                  <!-- Active: "ring-2 ring-indigo-500" -->
-                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                    <input type="radio" name="size-choice" value="XL" class="sr-only">
-                    <span>XL</span>
-                    <!--
-                      Active: "border", Not Active: "border-2"
-                      Checked: "border-indigo-500", Not Checked: "border-transparent"
-                    -->
-                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                  </label>
-                  <!-- Active: "ring-2 ring-indigo-500" -->
-                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                    <input type="radio" name="size-choice" value="2XL" class="sr-only">
-                    <span>2XL</span>
-                    <!--
-                      Active: "border", Not Active: "border-2"
-                      Checked: "border-indigo-500", Not Checked: "border-transparent"
-                    -->
-                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                  </label>
-                  <!-- Active: "ring-2 ring-indigo-500" -->
-                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                    <input type="radio" name="size-choice" value="3XL" class="sr-only">
-                    <span>3XL</span>
-                    <!--
-                      Active: "border", Not Active: "border-2"
-                      Checked: "border-indigo-500", Not Checked: "border-transparent"
-                    -->
-                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                  </label>
-                </div>
-              </fieldset>
-            </div>
-  
-            <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to bag</button>
-          </form>
         </div>
-  
-        <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
-          <!-- Description and details -->
-          <div>
-            <h3 class="sr-only">Description</h3>
-  
-            <div class="space-y-6">
-              <p class="text-base text-gray-900">The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: &quot;Black&quot;. Need to add an extra pop of color to your outfit? Our white tee has you covered.</p>
+        <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4">
+          <div class="flex items-center space-x-2">
+            <input type="radio" name="" id="">
+            <span class="font-medium">Nhận xe tại vị trí xe</span>
+          </div>
+          <div class="mt-4">
+            <p class="font-medium">196/2 Trần Thị Cơ, Phường Thới An, Quận 12</p>
+            <p class="text-gray-500 text-sm">Địa điểm cụ thể sẽ được hiện thị sau khi thanh toán thành công, và thời gian lấy xe 24/24</p>
+          </div>
+        </div>
+        <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4 mt-4">
+          <div class="flex items-center space-x-2">
+            <div class="relative">
+              <input type="radio" name="" id="">
+            </div>
+            <h3 class="font-medium">Giao xe tận nơi</h3>
+            
+          </div>
+          <p class="text-gray-500 text-sm mt-2">Chọn địa điểm</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4 mt-4">
+          <div class="flex items-center justify-between">
+            <span class="font-medium">Phí thuê xe</span>
+            <span>6.000.000 vnđ</span>
+          </div>
+          <div class="linner-gray" ></div>
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Chọn hoặc nhập mã khuyến mãi</h3>
+            <i class="bx bx-help-circle text-gray-400 cursor-pointer"></i>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-center border rounded-md px-2 py-1">
+              <input type="text" class="flex-1 focus:outline-none" placeholder="Nhập mã khuyến mãi">
+              <button class="bg-[#0CAF7F] text-white px-3 py-2 rounded-md hover:bg-[#0ba778] transition-colors">Áp dụng</button>
             </div>
           </div>
-  
-          <div class="mt-10">
-            <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
-  
-            <div class="mt-4">
-              <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
-                <li class="text-gray-400"><span class="text-gray-600">Hand cut and sewn locally</span></li>
-                <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
-                <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-                <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>
-              </ul>
+          <div class="linner-gray"></div>
+          <div class="w-full">
+            <div class="flex items-center justify-between">
+              <small class="font-medium">Phí giao xe</small>
+              <span>0 đ</span>
             </div>
+            <div class="flex items-center justify-between">
+              <small class="font-medium">Thuế VAT</small>
+              <span>480.000 đ</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <small class="font-medium">Tổng cộng tiền thuê</small>
+              <span>5.500.000 đ</span>
+            </div>
+            <small class="text-gray-500">Tiền giữ chỗ sẽ không được hoàn lại nếu huỷ chuyến. Tiền giữ chỗ sẽ được hoàn lại sau khi trả xe.</small>
+            <div class="flex items-center justify-between">
+              <small class="font-medium">Cọc xe</small>
+              <span>30.000.000 đ</span>
+            </div>
+            <small class="text-gray-500">Thanh toán sau khi nhận và kiểm tra xe, không nhận cọc xe máy.</small>
+            <button class="w-full mt-4 bg-[#0CAF7F] text-white px-4 py-3 rounded-md hover:bg-[#0ba778] transition-colors">Áp dụng</button>
           </div>
-  
-          <div class="mt-10">
-            <h2 class="text-sm font-medium text-gray-900">Details</h2>
-  
-            <div class="mt-4 space-y-6">
-              <p class="text-sm text-gray-600">The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming &quot;Charcoal Gray&quot; limited release.</p>
+        </div>
+
+        <div class="bg-white shadow-md border rounded-lg mt-4">
+          <h3 class="font-medium border-t border-l border-r bg-gray-200 text-lg w-full rounded-t-lg p-2">Các chi phí khác</h3>          <div class="mt-4 p-4">
+            <div class="flex justify-between items-center">
+              <span>Phụ phí xăng</span>
+              <span class="font-medium">30.000đ / lít</span>
             </div>
+            <p class="text-gray-500 text-sm mt-2">Bonbon chi trả khi vạch xăng thấp hơn lúc nhận xe. Trả lại đúng vạch xăng như lúc nhận để không phải trả phí này.</p>
+          </div>
+          <div class="linner-gray pr-4 pl-4"></div>
+          <div class="mt-2">
+            <div class="flex justify-between items-center pr-4 pl-4">
+              <span>Phí vệ sinh</span>
+              <div class="flex items-center space-x-2">
+                <span class="font-medium text-green-500">120.000đ</span>
+                <span class="text-gray-500 line-through">150.000đ</span>
+              </div>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 pr-4 pl-4">Vui lòng trả lại hiện trạng xe được vệ sinh như lúc nhận để không mất phí này.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
