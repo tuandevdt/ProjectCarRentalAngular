@@ -1,0 +1,9 @@
+{
+    "default": {
+      "username": "root",
+      "password": "Tuandoan@2404",
+      "database": "clothesstore",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+  }

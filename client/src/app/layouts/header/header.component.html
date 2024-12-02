@@ -28,14 +28,11 @@
         <li class='max-lg:border-b max-lg:py-3 px-3'><a [ngClass]="isActive ? 'hover:text-[#007bff] text-[#007bff] font-bold block text-base' : 'hover:text-[#007bff] text-gray-600 font-bold block text-base'" routerLink="/products"
             >Products</a>
         </li>
-        <li class='max-lg:border-b max-lg:py-3 px-3'><a routerLink="/about"
-            class='hover:text-[#007bff] text-gray-600 font-bold block text-base'>Feature</a>
-        </li>
-        <li class='max-lg:border-b max-lg:py-3 px-3'><a routerLink='javascript:void(0)'
-            class='hover:text-[#007bff] text-gray-600 font-bold block text-base'>Blog</a>
-        </li>
         <li class='max-lg:border-b max-lg:py-3 px-3'><a routerLink='javascript:void(0)'
             class='hover:text-[#007bff] text-gray-600 font-bold block text-base'>About</a>
+        </li>
+        <li class='max-lg:border-b max-lg:py-3 px-3'><a routerLink='javascript:void(0)'
+            class='hover:text-[#007bff] text-gray-600 font-bold block text-base'>Contact</a>
         </li>
         <li class='max-lg:border-b max-lg:py-3 px-3'><a routerLink='/admin/dashboard'
             class='hover:text-[#007bff] text-gray-600 font-bold block text-base'>Admin</a>
@@ -43,39 +40,41 @@
       </ul>
     </div>
 
-    <div *ngIf="isLogin" class='flex items-center max-lg:ml-auto space-x-5'>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"
-          class="cursor-pointer hover:fill-[#007bff] inline">
-          <circle cx="10" cy="7" r="6" data-original="#000000" />
-          <path
-            d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
-            data-original="#000000" />
-        </svg>
-        <span>{{getName()}}</span>
-        <span class="relative">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-            class="cursor-pointer hover:fill-[#007bff] inline" viewBox="0 0 512 512">
-            <path
-              d="M164.96 300.004h.024c.02 0 .04-.004.059-.004H437a15.003 15.003 0 0 0 14.422-10.879l60-210a15.003 15.003 0 0 0-2.445-13.152A15.006 15.006 0 0 0 497 60H130.367l-10.722-48.254A15.003 15.003 0 0 0 105 0H15C6.715 0 0 6.715 0 15s6.715 15 15 15h77.969c1.898 8.55 51.312 230.918 54.156 243.71C131.184 280.64 120 296.536 120 315c0 24.812 20.188 45 45 45h272c8.285 0 15-6.715 15-15s-6.715-15-15-15H165c-8.27 0-15-6.73-15-15 0-8.258 6.707-14.977 14.96-14.996zM477.114 90l-51.43 180H177.032l-40-180zM150 405c0 24.813 20.188 45 45 45s45-20.188 45-45-20.188-45-45-45-45 20.188-45 45zm45-15c8.27 0 15 6.73 15 15s-6.73 15-15 15-15-6.73-15-15 6.73-15 15-15zm167 15c0 24.813 20.188 45 45 45s45-20.188 45-45-20.188-45-45-45-45 20.188-45 45zm45-15c8.27 0 15 6.73 15 15s-6.73 15-15 15-15-6.73-15-15 6.73-15 15-15zm0 0"
-              data-original="#000000"></path>
+    <div *ngIf="isLogin" class="relative flex items-center max-lg:ml-auto space-x-5">
+
+      <div class="relative">
+          <input type="checkbox" id="dropdownToggle" class="hidden peer" />
+          <label for="dropdownToggle" class="flex items-center cursor-pointer hover:fill-[#007bff]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" class="cursor-pointer hover:fill-[#007bff] inline">
+              <circle cx="10" cy="7" r="6" data-original="#000000" />
+              <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000" />
           </svg>
-          <span class="absolute left-auto -ml-1 top-0 rounded-full bg-red-500 px-1 py-0 text-xs text-white">0</span>
-        </span>
-        <button id="toggleOpen" class='lg:hidden !ml-7'>
+            <span>{{name}}</span>
+          </label>
+          <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden peer-checked:block">
+              <ul class="py-1">
+                  <li>
+                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Profile</a>
+                  </li>
+                  <li>
+                      <span (click)="logout()"  class="cursor-pointer block px-4 py-2 text-gray-800 hover:bg-gray-200">Logout</span>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <button id="toggleOpen" class="lg:hidden !ml-7">
           <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"></path>
+              <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
           </svg>
-        </button>
-
-
-      
-    </div>
+      </button>
+  </div>
     <div *ngIf="!isLogin" >
-      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
+      <button class="bg-blue-500 mr-4 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
         <a routerLink="/login">Login</a>
     </button>
+      <span class="font-bold py-2 px-4">
+        <a routerLink="">About Us</a>
+    </span>
     </div>
   </div>
 </header>

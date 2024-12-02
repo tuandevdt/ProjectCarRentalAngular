@@ -1,13 +1,22 @@
 <div class="max-w-6xl mx-auto my-8 relative">
     <div class="overflow-hidden">
         <div id="productSlider" class="flex transition-transform duration-500 ease-in-out">
-            <div><app-slider-item></app-slider-item></div>
-            <div><app-slider-item></app-slider-item></div>
-            <div><app-slider-item></app-slider-item></div>
-            <div><app-slider-item></app-slider-item></div>
-            <div><app-slider-item></app-slider-item></div>
-            <div><app-slider-item></app-slider-item></div>
-            <div><app-slider-item></app-slider-item></div>
+            <div *ngFor="let item of lists">
+                <app-slider-item 
+                [id]="item.id"
+                [name]="item.name"
+                [categoryName]="item.category.name"
+                [deposit]="item.deposit"
+                [description]="item.description"
+                [price]="item.price"
+                [address]="item.address"
+                [image1]="item.image1"
+                [image2]="item.image2"
+                [image3]="item.image3"
+                [image4]="item.image4"
+                >
+                </app-slider-item> <!-- Truyền item vào component -->
+            </div>
         </div>
     </div>
     <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 focus:outline-none">

@@ -13,6 +13,8 @@ import { UserManagerComponent } from './components/admin/user-manager/user-manag
 import { CategoryManagerComponent } from './components/admin/category-manager/category-manager.component';
 import { ProductManagerComponent } from './components/admin/product-manager/product-manager.component';
 import { OrderManagerComponent } from './components/admin/order-manager/order-manager.component';
+import { CheckoutComponent } from './components/user/checkout/checkout.component';
+import { MyCheckoutComponent } from './components/user/my-checkout/my-checkout.component';
 
 
 @Component({
@@ -32,8 +34,9 @@ import { OrderManagerComponent } from './components/admin/order-manager/order-ma
     UserManagerComponent,
     CategoryManagerComponent,
     ProductManagerComponent,
-    OrderManagerComponent
-
+    OrderManagerComponent,
+    CheckoutComponent,
+    MyCheckoutComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

@@ -1,5 +1,6 @@
 <div class="p-4 mx-auto lg:max-w-7xl sm:max-w-full">
   <h1 class="text-center font-semibold">List Products</h1>
+
   <div class="flex rounded-md border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
     <input [(ngModel)]="productName" name="productName" type="text" placeholder="Search Something..."
       class="w-full outline-none bg-white text-gray-600 text-sm px-4 py-3" />
@@ -26,10 +27,8 @@
         <option value="7">7 chỗ</option>
       </select> <select
         class="px-3 py-1 bg-white text-[#00C48C] rounded-full border border-[#00C48C] focus:outline-none">
-        <option value="">Hàng xe</option>
-        <option value="sedan">Sedan</option>
-        <option value="suv">SUV</option>
-        <option value="hatchback">Hatchback</option>
+        <option value="" disabled>Hãng xe</option>
+        <option *ngFor="let item of categories" value="{{item.id}}">{{item.name}}</option>
       </select> <select
         class="px-3 py-1 bg-white text-[#00C48C] rounded-full border border-[#00C48C] focus:outline-none">
         <option value="">Loại xe</option>
@@ -59,8 +58,8 @@
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6">
-    <app-product-item (isSaveEvent)="getData($event)" [name]="item.name" [isSave]="item.isSave" [price]="item.price"
-      [url]="item.url" [productId]="item.id" *ngFor="let item of products">
+    <app-product-item [id]="item.id" [name]="item.name" [price]="item.price"
+      [url]="item.image1" [productId]="item.id" *ngFor="let item of products">
     </app-product-item>
   </div>
 </div>

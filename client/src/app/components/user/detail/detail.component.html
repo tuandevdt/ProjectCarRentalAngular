@@ -22,43 +22,34 @@
         </li>
 
         <li class="text-sm">
-          <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
+          <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">{{product.name}}</a>
         </li>
       </ol>
     </nav>
 
     <!-- Image gallery -->
     <div id="grid-images" class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-      <div class="aspect-h-4 aspect-w-6 overflow-hidden rounded-lg lg:block"> <img
-          src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
-          alt="Car image" class="w-full h-full object-cover object-center">
+      <div class="aspect-w-6 overflow-hidden rounded-lg lg:block fixed-height">
+        <img src="{{product.image1}}" alt="Car image" class="w-full h-full object-cover object-center">
       </div>
       <div class="grid grid-cols-1 gap-y-8 lg:grid">
-        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg"> <img
-            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
-            alt="Car image" class="w-full h-full object-cover object-center" alt="Black t-shirt"
-            class="w-full h-full object-cover object-center"> </div>
-        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg"> <img
-            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
-            alt="Car image" class="w-full h-full object-cover object-center" alt="Gray t-shirt"
-            class="w-full h-full object-cover object-center"> </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg fixed-height">
+          <img src="{{product.image1}}" alt="Black t-shirt" class="w-full h-full object-cover object-center">
+        </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg fixed-height">
+          <img src="{{product.image2}}" alt="Gray t-shirt" class="w-full h-full object-cover object-center">
+        </div>
       </div>
       <div class="grid grid-cols-1 gap-y-8 lg:grid">
-        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg"> <img
-            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
-            alt="Car image" class="w-full h-full object-cover object-center" alt="Black t-shirt"
-            class="w-full h-full object-cover object-center"> </div>
-        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg"> <img
-            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fc53f757c0c80a7defe91_copy_4d54a24a61%2Fc53f757c0c80a7defe91_copy_4d54a24a61.jpg&w=1920&q=75"
-            alt="Car image" class="w-full h-full object-cover object-center" alt="Gray t-shirt"
-            class="w-full h-full object-cover object-center"> </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg fixed-height">
+          <img src="{{product.image3}}" alt="Black t-shirt" class="w-full h-full object-cover object-center">
+        </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg fixed-height">
+          <img src="{{product.image4}}" alt="Gray t-shirt" class="w-full h-full object-cover object-center">
+        </div>
       </div>
     </div>
     <div>
-      <form action="">
-        <input type="text" name="q">
-      <button type="submit">search</button>
-      </form>
     </div>
     <!-- Product info -->
     <div
@@ -67,11 +58,11 @@
         <div class="w-full flex lg:col-span-2 lg:pr-8 items-center justify-between">
           <div>
             <div class="flex lg:col-span-2 lg:pr-8 items-center">
-              <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Id: {{id}}, BMW 320I 2024</h1> <img
+              <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{product.name}}</h1> <img
                 alt="Thuê xe tự lái thoải mái bonbon | Bonboncar"
                 src="https://www.bonboncar.vn/_next/image?url=%2Ficons%2Ficon-xe-xin.png&w=96&q=75" class="ml-4 h-6">
             </div>
-            <span id="location"><i class='bx bxs-location-plus'></i> 196/2 Trần Thị Cờ, Phường Thới An, Quận 12</span>
+            <span id="location"><i class='bx bxs-location-plus'></i> {{product.address}}</span>
           </div>
           <div id="share-icon" class="flex lg:col-span-2 lg:pr-8 items-center">
             <i class='bx bxs-share-alt'></i>
@@ -117,9 +108,7 @@
         <div class="w-full lg:col-span-2 lg:pr-8 mt-10">
           <h1 class="font-bold text-xl">Mô tả</h1>
           <span class="liner-green"></span>
-          <p class="mt-4">BMW 320i là một trong những mẫu xe nổi bật thuộc dòng BMW 3 Series, vốn là dòng sedan hạng
-            sang và thể thao được yêu thích của hãng xe BMW từ Đức. BMW 320i thường nằm ở phân khúc trung cấp trong dòng
-            3 Series, mang lại sự kết hợp hài hòa giữa hiệu suất, tiện nghi và tính thể thao.</p>
+          <p class="mt-4">{{product.description}}</p>
         </div>
         <div class="w-full lg:col-span-2 lg:pr-8 mt-10">
           <h1 class="font-bold text-xl">Các tiện nghi khác</h1>
@@ -131,7 +120,7 @@
                   <div class="text-gray-700 font-medium">Bán đỗ</div>
                 </div>
               </div>
-              <div class="flex items-center space-x-2"> <i class='bx bx-bluetooth' ></i>
+              <div class="flex items-center space-x-2"> <i class='bx bx-bluetooth'></i>
                 <div>
                   <div class="text-gray-700 font-medium">Bluetooth</div>
                 </div>
@@ -230,9 +219,11 @@
             <li>Không hút thuốc, nhả kẹo cao su, xả rác trong xe.</li>
             <li>Không chở hàng quốc cấm dễ cháy nổ.</li>
             <li>Không chở hoa quả, thực phẩm nặng mùi trong xe.</li>
-            <li>Khi trả xe, nếu xe bẩn hoặc có mùi trong xe, khách hàng vui lòng vệ sinh xe sạch sẽ hoặc gửi phụ thu phí vệ sinh xe.</li>
-            <li>Xe được giới hạn di chuyển ở mức 400km cho 24h, và lần lượt là 250km, 300km, 350 km cho gói 4h, 8h, 12h.</li>
-        </ul> 
+            <li>Khi trả xe, nếu xe bẩn hoặc có mùi trong xe, khách hàng vui lòng vệ sinh xe sạch sẽ hoặc gửi phụ thu phí
+              vệ sinh xe.</li>
+            <li>Xe được giới hạn di chuyển ở mức 400km cho 24h, và lần lượt là 250km, 300km, 350 km cho gói 4h, 8h, 12h.
+            </li>
+          </ul>
           <p>Trân trọng cảm ơn, chúc quý khách hàng có những chuyến đi tuyệt vời !</p>
         </div>
         <div class="w-full lg:col-span-2 lg:pr-8 mt-10">
@@ -273,141 +264,168 @@
         <div class="bg-white rounded-lg max-w-md mx-auto">
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div class="flex flex-col items-center">
-              <span class="w-full line-through text-gray-500"><small>1200K/4 giờ</small></span>
-              <span class="w-full font-medium text-[#0CAF7F]"><span class="text-2xl">1080K</span>/4 giờ</span>
+              <span class="w-full line-through text-gray-500"><small>{{product.price / 3.2}} đ/4 giờ</small></span>
+              <span class="w-full font-medium text-[#0CAF7F]"><span class="text-2xl">{{product.price /4}}</span>/4
+                giờ</span>
             </div>
             <div class="flex flex-col items-center">
-              <span class="w-full line-through text-gray-500"><small>1600/8 giờ</small></span>
-              <span class="w-full text-gray-500"><span>1520K</span>/8 giờ</span>
+              <span class="w-full line-through text-gray-500"><small>{{product.price / 2}} đ/8 giờ</small></span>
+              <span class="w-full text-gray-500"><span>{{product.price / 2.5}} đ</span>/8 giờ</span>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div class="flex flex-col items-center">
-              <span class="w-full line-through text-gray-500"><small>1600/12 giờ</small></span>
-              <span class="w-full text-gray-500"><span>1520K</span>/12 giờ</span>
+              <span class="w-full line-through text-gray-500"><small>{{product.price}} đ/12 giờ</small></span>
+              <span class="w-full text-gray-500"><span>{{product.price}} đ</span>/12 giờ</span>
             </div>
             <div class="flex flex-col items-center">
-              <span class="w-full line-through text-gray-500"><small>1600/24 giờ</small></span>
-              <span class="w-full text-gray-500"><span>1520K</span>/24 giờ</span>
+              <span class="w-full line-through text-gray-500"><small>{{product.price}} đ/12 giờ</small></span>
+              <span class="w-full text-gray-500"><span>{{product.price}} đ</span>/12 giờ</span>
             </div>
           </div>
         </div>
-        
 
-        <!-- Reviews -->
-        <div class="mt-6 overflow-hidden">
-          <div class="w-full bg-white rounded-lg">
-            <div class="mb-4">
-              <h3 class=" font-bold text-xl">Thời gian thuê</h3>
-              <div class="gap-4">
-                <h1 class="font-bold text-lg">Từ</h1>
-                <div class="flex relative border border-gray-300 rounded-lg">
-                  <div class="w-full"> <input type="date"
-                      class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value="2024-11-14"> <i
-                      class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                  </div>
-                  <div class="w-full"> <input type="time"
-                      class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value="14:00"> <i
-                      class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i> </div>
+
+        <form action="" (ngSubmit)="onSubmit()" #rentalForm="ngForm">
+          <!-- Reviews -->
+          <div class="mt-6 overflow-hidden">
+            <div class="w-full bg-white rounded-lg">
+                <div class="mb-4">
+                    <h3 class="font-bold text-xl">Thời gian thuê</h3>
+                    <div class="gap-4">
+                        <h1 class="font-bold text-lg">Từ</h1>
+                        <div class="flex relative border border-gray-300 rounded-lg">
+                            <div class="w-full">
+                                <input type="date" name="startDate" [(ngModel)]="rentalData.startDate"
+                                       class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <i class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                                <div *ngIf="isStart" class="text-red-500 text-sm">
+                                  Trường này là bắt buộc.
+                              </div>
+                              </div>
+                            <div class="w-full">
+                                <input type="time" name="startTime" [(ngModel)]="rentalData.startTime"
+                                       class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <i class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                              </div>
+                        </div>
+                        <h1 class="font-bold text-lg">Đến</h1>
+                        <div class="flex relative border border-gray-300 rounded-lg">
+                            <div class="w-full">
+                                <input type="date" name="endDate" [(ngModel)]="rentalData.endDate"
+                                       class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <i class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                                <div *ngIf="isEnd" class="text-red-500 text-sm">
+                                  Trường này là bắt buộc.
+                              </div>
+                              </div>
+                            <div class="w-full">
+                                <input type="time" name="endTime" [(ngModel)]="rentalData.endTime"
+                                       class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <i class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="font-bold text-lg">Đến</h1>
-                <div class="flex relative border border-gray-300 rounded-lg">
-                  <div class="w-full"> <input type="date"
-                      class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value="2024-11-16"> <i
-                      class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                  </div>
-                  <div class="w-full"> <input type="time"
-                      class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value="18:00"> <i
-                      class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i> </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
         <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4">
           <div class="flex items-center space-x-2">
-            <input type="radio" name="" id="">
-            <span class="font-medium">Nhận xe tại vị trí xe</span>
+              <input type="radio" name="pickup" id="pickupLocation" [(ngModel)]="selectedOption" value="pickup">
+              <span class="font-medium">Nhận xe tại vị trí xe</span>
+              <input type="hidden" name="id" [(ngModel)]="id" value="{{product.id}}">
           </div>
           <div class="mt-4">
-            <p class="font-medium">196/2 Trần Thị Cơ, Phường Thới An, Quận 12</p>
-            <p class="text-gray-500 text-sm">Địa điểm cụ thể sẽ được hiện thị sau khi thanh toán thành công, và thời gian lấy xe 24/24</p>
+              <p class="font-medium">{{product.address}}</p>
+              <p class="text-gray-500 text-sm">Địa điểm cụ thể sẽ được hiện thị sau khi thanh toán thành công, và thời gian lấy xe 24/24</p>
           </div>
-        </div>
-        <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4 mt-4">
+      </div>
+      
+      <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4 mt-4">
           <div class="flex items-center space-x-2">
-            <div class="relative">
-              <input type="radio" name="" id="">
-            </div>
-            <h3 class="font-medium">Giao xe tận nơi</h3>
-            
+              <input type="radio" name="pickup" id="deliveryLocation" [(ngModel)]="selectedOption" value="delivery">
+              <h3 class="font-medium">Giao xe tận nơi</h3>
           </div>
           <p class="text-gray-500 text-sm mt-2">Chọn địa điểm</p>
+          
+          <!-- Input địa chỉ chỉ hiển thị khi chọn giao xe tận nơi -->
+          <div *ngIf="selectedOption === 'delivery'" class="mt-2">
+              <input type="text" name="delivery" [(ngModel)]="deliveryAddress" placeholder="Nhập địa chỉ giao xe"
+                     class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
+          </div>
+          <div *ngIf="isValidAddress" class="text-red-500 text-sm">
+            Trường này là bắt buộc.
         </div>
-        <div class="bg-white shadow-md rounded-lg p-4 mt-4">
-          <div class="flex items-center justify-between">
-            <span class="font-medium">Phí thuê xe</span>
-            <span>6.000.000 vnđ</span>
-          </div>
-          <div class="linner-gray" ></div>
-          <div class="flex items-center justify-between">
-            <h3 class="font-medium">Chọn hoặc nhập mã khuyến mãi</h3>
-            <i class="bx bx-help-circle text-gray-400 cursor-pointer"></i>
-          </div>
-          <div class="mt-4">
-            <div class="flex items-center border rounded-md px-2 py-1">
-              <input type="text" class="flex-1 focus:outline-none" placeholder="Nhập mã khuyến mãi">
-              <button class="bg-[#0CAF7F] text-white px-3 py-2 rounded-md hover:bg-[#0ba778] transition-colors">Áp dụng</button>
-            </div>
-          </div>
-          <div class="linner-gray"></div>
-          <div class="w-full">
+      </div>
+          <div class="bg-white shadow-md rounded-lg p-4 mt-4">
             <div class="flex items-center justify-between">
-              <small class="font-medium">Phí giao xe</small>
-              <span>0 đ</span>
+              <span class="font-medium">Phí thuê xe</span>
+              <span>{{product.price}} vnđ</span>
             </div>
+            <div class="linner-gray"></div>
             <div class="flex items-center justify-between">
-              <small class="font-medium">Thuế VAT</small>
-              <span>480.000 đ</span>
+              <h3 class="font-medium">Chọn hoặc nhập mã khuyến mãi</h3>
+              <i class="bx bx-help-circle text-gray-400 cursor-pointer"></i>
             </div>
-            <div class="flex items-center justify-between">
-              <small class="font-medium">Tổng cộng tiền thuê</small>
-              <span>5.500.000 đ</span>
-            </div>
-            <small class="text-gray-500">Tiền giữ chỗ sẽ không được hoàn lại nếu huỷ chuyến. Tiền giữ chỗ sẽ được hoàn lại sau khi trả xe.</small>
-            <div class="flex items-center justify-between">
-              <small class="font-medium">Cọc xe</small>
-              <span>30.000.000 đ</span>
-            </div>
-            <small class="text-gray-500">Thanh toán sau khi nhận và kiểm tra xe, không nhận cọc xe máy.</small>
-            <button class="w-full mt-4 bg-[#0CAF7F] text-white px-4 py-3 rounded-md hover:bg-[#0ba778] transition-colors">Áp dụng</button>
-          </div>
-        </div>
-
-        <div class="bg-white shadow-md border rounded-lg mt-4">
-          <h3 class="font-medium border-t border-l border-r bg-gray-200 text-lg w-full rounded-t-lg p-2">Các chi phí khác</h3>          <div class="mt-4 p-4">
-            <div class="flex justify-between items-center">
-              <span>Phụ phí xăng</span>
-              <span class="font-medium">30.000đ / lít</span>
-            </div>
-            <p class="text-gray-500 text-sm mt-2">Bonbon chi trả khi vạch xăng thấp hơn lúc nhận xe. Trả lại đúng vạch xăng như lúc nhận để không phải trả phí này.</p>
-          </div>
-          <div class="linner-gray pr-4 pl-4"></div>
-          <div class="mt-2">
-            <div class="flex justify-between items-center pr-4 pl-4">
-              <span>Phí vệ sinh</span>
-              <div class="flex items-center space-x-2">
-                <span class="font-medium text-green-500">120.000đ</span>
-                <span class="text-gray-500 line-through">150.000đ</span>
+            <div class="mt-4">
+              <div class="flex items-center border rounded-md px-2 py-1">
+                <input type="text" class="flex-1 focus:outline-none" placeholder="Nhập mã khuyến mãi">
+                <button class="bg-[#0CAF7F] text-white px-3 py-2 rounded-md hover:bg-[#0ba778] transition-colors">Áp
+                  dụng</button>
               </div>
             </div>
-            <p class="text-gray-500 text-sm mt-2 pr-4 pl-4">Vui lòng trả lại hiện trạng xe được vệ sinh như lúc nhận để không mất phí này.</p>
+            <div class="linner-gray"></div>
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <small class="font-medium">Phí giao xe</small>
+                <span>0 đ</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <small class="font-medium">Thuế VAT</small>
+                <span>{{product.price*0.2}} đ</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <small class="font-medium">Tổng cộng tiền thuê</small>
+                <span>{{+product.price + product.price*0.2 }} đ</span>
+              </div>
+              <small class="text-gray-500">Tiền giữ chỗ sẽ không được hoàn lại nếu huỷ chuyến. Tiền giữ chỗ sẽ được hoàn
+                lại sau khi trả xe.</small>
+              <div class="flex items-center justify-between">
+                <small class="font-medium">Cọc xe</small>
+                <span>{{product.price > 2000000 ? 40000000 : 30000000}} đ</span>
+              </div>
+              <small class="text-gray-500">Thanh toán sau khi nhận và kiểm tra xe, không nhận cọc xe máy.</small>
+              <button type="submit"
+                class="w-full mt-4 bg-[#0CAF7F] text-white px-4 py-3 rounded-md hover:bg-[#0ba778] transition-colors">Áp
+                dụng</button>
+            </div>
           </div>
-        </div>
+
+          <div class="bg-white shadow-md border rounded-lg mt-4">
+            <h3 class="font-medium border-t border-l border-r bg-gray-200 text-lg w-full rounded-t-lg p-2">Các chi phí
+              khác</h3>
+            <div class="mt-4 p-4">
+              <div class="flex justify-between items-center">
+                <span>Phụ phí xăng</span>
+                <span class="font-medium">30.000đ / lít</span>
+              </div>
+              <p class="text-gray-500 text-sm mt-2">Bonbon chi trả khi vạch xăng thấp hơn lúc nhận xe. Trả lại đúng vạch
+                xăng như lúc nhận để không phải trả phí này.</p>
+            </div>
+            <div class="linner-gray pr-4 pl-4"></div>
+            <div class="mt-2">
+              <div class="flex justify-between items-center pr-4 pl-4">
+                <span>Phí vệ sinh</span>
+                <div class="flex items-center space-x-2">
+                  <span class="font-medium text-green-500">120.000đ</span>
+                  <span class="text-gray-500 line-through">150.000đ</span>
+                </div>
+              </div>
+              <p class="text-gray-500 text-sm mt-2 pr-4 pl-4">Vui lòng trả lại hiện trạng xe được vệ sinh như lúc nhận
+                để không mất phí này.</p>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

@@ -1,15 +1,18 @@
-import { Component, AfterViewInit, ElementRef, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, AfterViewInit, ElementRef, Renderer2, Inject, PLATFORM_ID, OnInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SliderItemComponent } from './slider-item/slider-item.component';
+import { ProductService } from '../../../../service/admin/product/product.service';
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [SliderItemComponent],
+  imports: [SliderItemComponent, CommonModule],
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css']
 })
-export class SliderComponent implements AfterViewInit {
+export class SliderComponent implements AfterViewInit, OnInit {
+    products: any = [];
+    lists: any = [];
   private slider: HTMLElement | null = null;
   private prevBtn: HTMLElement | null = null;
   private nextBtn: HTMLElement | null = null;
@@ -17,8 +20,20 @@ export class SliderComponent implements AfterViewInit {
   private slidesPerView: number = 4;
   private totalSlides: number = 0;
 
-  constructor(private renderer: Renderer2, private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
-
+  constructor(
+    private renderer: Renderer2, 
+    private el: ElementRef, 
+    @Inject(PLATFORM_ID) 
+    private platformId: Object,
+    private productService: ProductService,
+) {}
+    ngOnInit(): void {
+        this.productService.getAllProducts().subscribe(data => {
+            this.products = data;
+            this.lists = this.products.data;
+            
+          });
+    }
   ngAfterViewInit() {
       this.slider = this.el.nativeElement.querySelector('#productSlider');
       this.prevBtn = this.el.nativeElement.querySelector('#prevBtn');

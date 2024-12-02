@@ -1,0 +1,53 @@
+<div class="container max-w-[80%] mx-auto my-8 p-4 bg-white rounded-lg shadow-md">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <div class="m-4 p-4 border border-gray-300">
+        <h2 class="text-lg font-bold mb-2">Thanh toán phí giữ chỗ</h2>
+        <p class="text-red-500 font-bold t text-3xl mb-2">{{getFormatPrice(500000)}}</p>
+        <ul class="list-disc pl-4 text-gray-700 space-y-1">
+          <li>Được hoàn trả toàn bộ sau khi trả xe.</li>
+          <li>Hoàn lại khi hủy đơn trước 5 ngày.</li>
+        </ul>
+        <div class="mt-4">
+          <span class="font-bold">Vui lòng quét mã QRCode hoặc ảnh mã hình QRCode để thanh toán bằng ứng dụng ngân hàng</span>
+          <div class="w-full flex justify-center mt-2">
+            <img class="w-[70%]" src="https://i.postimg.cc/mDJnH9Lr/qrcode.jpg" alt="QR Code">
+          </div>
+        </div>
+      </div>
+      <div class="m-4 p-4 border border-gray-300">
+        <h2 class="text-lg font-bold mb-2">Thông tin đơn thuê</h2>
+        <div class="space-y-2">
+          <div>
+            <span class="font-bold">Mã đặt xe: </span>
+            <span class="text-gray-700">{{randomCode}}</span>
+          </div>
+          <div>
+            <span class="font-bold">Tên khách thuê: </span>
+            <span class="text-gray-700">{{infor.username}}</span>
+          </div>
+          <div>
+            <span class="font-bold">Số điện thoại: </span>
+            <span class="text-gray-700">{{infor.phone}}</span>
+          </div>
+          <div>
+            <span class="font-bold">Ngày nhận: </span>
+            <span class="text-gray-700">{{infor.startDate}} {{infor.startTime}}</span>
+          </div>
+          <div>
+            <span class="font-bold">Ngày trả: </span>
+            <span class="text-gray-700">{{infor.endDate}} {{infor.endTime}}</span>
+          </div>
+          <div>
+            <span class="font-bold">Loại xe: </span>
+            <span class="text-gray-700">{{product.name}}</span>
+          </div>
+          <div>
+            <span class="font-bold">Tổng cộng tiền thuê xe: </span>
+            <span class="text-gray-700">{{ getFormatPrice(infor.sumPrice) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

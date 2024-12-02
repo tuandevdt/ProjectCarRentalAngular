@@ -1,43 +1,42 @@
-<div class="flex rounded-md mt-6 border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]"><input
-        type="text" placeholder="Search Something..."
-        class="w-full outline-none bg-white text-gray-600 text-sm px-4 py-3" value=""></div>
+<form (submit)="search(searchForm)" action="" #searchForm="ngForm">
+<div class="flex rounded-md border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
+        <input ngModel name="q" type="text" placeholder="Search Something..."
+      class="w-full outline-none bg-white text-gray-600 text-sm px-4 py-3" />
+    <button type='submit' class="flex items-center justify-center bg-[#007bff] px-5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class="fill-white">
+        <path
+          d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z">
+        </path>
+      </svg>
+    </button>
+  </div>
+</form>
+
 <table class="min-w-full bg-white mt-4">
     <thead class="whitespace-nowrap">
         <tr>
-            <th class="pl-4 w-8"><input id="checkbox" type="checkbox" class="hidden peer"><label for="checkbox"
-                    class="relative flex items-center justify-center p-0.5 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer bg-blue-500 border border-gray-400 rounded overflow-hidden"><svg
-                        xmlns="http://www.w3.org/2000/svg" class="w-full fill-white" viewBox="0 0 520 520">
-                        <path
-                            d="M79.423 240.755a47.529 47.529 0 0 0-36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515L486.588 56.773a6.13 6.13 0 0 1 .128-.2c2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0-19.362 1.343q-.135.166-.278.327L210.887 328.736a10.961 10.961 0 0 1-15.585.843l-83.94-76.386a47.319 47.319 0 0 0-31.939-12.438z"
-                            data-name="7-Check" data-original="#000000"></path>
-                    </svg></label></th>
+            <th>ID</th>
             <th class="p-4 text-left text-sm font-semibold text-black">Name</th>
-            <th class="p-4 text-left text-sm font-semibold text-black">Color</th>
+            <th class="p-4 text-left text-sm font-semibold text-black">Create Date</th>
             <th class="p-4 text-left text-sm font-semibold text-black">Role</th>
             <th class="p-4 text-left text-sm font-semibold text-black">Active</th>
             <th class="p-4 text-left text-sm font-semibold text-black">Action</th>
         </tr>
     </thead>
     <tbody class="whitespace-nowrap">
-        <tr class="odd:bg-blue-50">
-            <td class="pl-4 w-8"><input id="checkbox1" type="checkbox" class="hidden peer"><label for="checkbox1"
-                    class="relative flex items-center justify-center p-0.5 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer bg-blue-500 border border-gray-400 rounded overflow-hidden"><svg
-                        xmlns="http://www.w3.org/2000/svg" class="w-full fill-white" viewBox="0 0 520 520">
-                        <path
-                            d="M79.423 240.755a47.529 47.529 0 0 0-36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515L486.588 56.773a6.13 6.13 0 0 1 .128-.2c2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0-19.362 1.343q-.135.166-.278.327L210.887 328.736a10.961 10.961 0 0 1-15.585.843l-83.94-76.386a47.319 47.319 0 0 0-31.939-12.438z"
-                            data-name="7-Check" data-original="#000000"></path>
-                    </svg></label></td>
+        <tr class="odd:bg-blue-50" *ngFor="let item of users">
+            <td class="text-center">{{item.id}}</td>
             <td class="p-4 text-sm">
-                <div class="flex items-center cursor-pointer w-max"><img src="https://readymadeui.com/profile_4.webp"
+                <div class="flex items-center cursor-pointer w-max"><img src="{{item.image}}"
                         class="w-9 h-9 rounded-full shrink-0">
                     <div class="ml-4">
-                        <p class="text-sm text-black">Tuan Dev</p>
-                        <p class="text-xs text-gray-500 mt-0.5">tuandevdtexample.com</p>
+                        <p class="text-sm text-black">{{item.username}}</p>
+                        <p class="text-xs text-gray-500 mt-0.5">{{item.email}}</p>
                     </div>
                 </div>
             </td>
             <td class="p-4 text-sm text-black">
-                <div class="div-color" style="background-color: red;"></div>
+                <div class="div-color">{{item.createdAt}}</div>
             </td>
             <td class="p-4 text-sm text-black">Admin</td>
             <td class="p-4"><label class="relative cursor-pointer"><input type="checkbox" class="sr-only peer">
@@ -45,7 +44,8 @@
                         class="w-11 h-6 flex items-center bg-gray-300 rounded-full peer peer-checked:after:translate-x-full after:absolute after:left-[2px] peer-checked:after:border-white after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#007bff]">
                     </div>
                 </label></td>
-            <td class="p-4"><button class="mr-4" title="Edit"><svg xmlns="http://www.w3.org/2000/svg"
+            <td class="p-4">
+                <button class="mr-4" title="Edit"><svg xmlns="http://www.w3.org/2000/svg"
                         class="w-5 fill-blue-500 hover:fill-blue-700" viewBox="0 0 348.882 348.882">
                         <path
                             d="m333.988 11.758-.42-.383A43.363 43.363 0 0 0 304.258 0a43.579 43.579 0 0 0-32.104 14.153L116.803 184.231a14.993 14.993 0 0 0-3.154 5.37l-18.267 54.762c-2.112 6.331-1.052 13.333 2.835 18.729 3.918 5.438 10.23 8.685 16.886 8.685h.001c2.879 0 5.693-.592 8.362-1.76l52.89-23.138a14.985 14.985 0 0 0 5.063-3.626L336.771 73.176c16.166-17.697 14.919-45.247-2.783-61.418zM130.381 234.247l10.719-32.134.904-.99 20.316 18.556-.904.99-31.035 13.578zm184.24-181.304L182.553 197.53l-20.316-18.556L294.305 34.386c2.583-2.828 6.118-4.386 9.954-4.386 3.365 0 6.588 1.252 9.082 3.53l.419.383c5.484 5.009 5.87 13.546.861 19.03z"
@@ -53,100 +53,18 @@
                         <path
                             d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
                             data-original="#000000"></path>
-                    </svg></button><button title="Delete"><svg xmlns="http://www.w3.org/2000/svg"
+                    </svg>
+                </button>
+                <button title="Delete"><svg xmlns="http://www.w3.org/2000/svg"
                         class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
                         <path
                             d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
                             data-original="#000000"></path>
                         <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
                             data-original="#000000"></path>
-                    </svg></button></td>
-        </tr>
-        <tr class="odd:bg-blue-50">
-            <td class="pl-4 w-8"><input id="checkbox1" type="checkbox" class="hidden peer"><label for="checkbox1"
-                    class="relative flex items-center justify-center p-0.5 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer bg-blue-500 border border-gray-400 rounded overflow-hidden"><svg
-                        xmlns="http://www.w3.org/2000/svg" class="w-full fill-white" viewBox="0 0 520 520">
-                        <path
-                            d="M79.423 240.755a47.529 47.529 0 0 0-36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515L486.588 56.773a6.13 6.13 0 0 1 .128-.2c2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0-19.362 1.343q-.135.166-.278.327L210.887 328.736a10.961 10.961 0 0 1-15.585.843l-83.94-76.386a47.319 47.319 0 0 0-31.939-12.438z"
-                            data-name="7-Check" data-original="#000000"></path>
-                    </svg></label></td>
-            <td class="p-4 text-sm">
-                <div class="flex items-center cursor-pointer w-max"><img src="https://readymadeui.com/profile_5.webp"
-                        class="w-9 h-9 rounded-full shrink-0">
-                    <div class="ml-4">
-                        <p class="text-sm text-black">Jennie Cooper</p>
-                        <p class="text-xs text-gray-500 mt-0.5">jennieexample.com</p>
-                    </div>
-                </div>
+                    </svg>
+                </button>
             </td>
-            <td class="p-4 text-sm text-black">
-                <div class="div-color" style="background-color: green;"></div>
-            </td>
-            <td class="p-4 text-sm text-black">User</td>
-            <td class="p-4"><label class="relative cursor-pointer"><input type="checkbox" class="sr-only peer">
-                    <div
-                        class="w-11 h-6 flex items-center bg-gray-300 rounded-full peer peer-checked:after:translate-x-full after:absolute after:left-[2px] peer-checked:after:border-white after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#007bff]">
-                    </div>
-                </label></td>
-            <td class="p-4"><button class="mr-4" title="Edit"><svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 fill-blue-500 hover:fill-blue-700" viewBox="0 0 348.882 348.882">
-                        <path
-                            d="m333.988 11.758-.42-.383A43.363 43.363 0 0 0 304.258 0a43.579 43.579 0 0 0-32.104 14.153L116.803 184.231a14.993 14.993 0 0 0-3.154 5.37l-18.267 54.762c-2.112 6.331-1.052 13.333 2.835 18.729 3.918 5.438 10.23 8.685 16.886 8.685h.001c2.879 0 5.693-.592 8.362-1.76l52.89-23.138a14.985 14.985 0 0 0 5.063-3.626L336.771 73.176c16.166-17.697 14.919-45.247-2.783-61.418zM130.381 234.247l10.719-32.134.904-.99 20.316 18.556-.904.99-31.035 13.578zm184.24-181.304L182.553 197.53l-20.316-18.556L294.305 34.386c2.583-2.828 6.118-4.386 9.954-4.386 3.365 0 6.588 1.252 9.082 3.53l.419.383c5.484 5.009 5.87 13.546.861 19.03z"
-                            data-original="#000000"></path>
-                        <path
-                            d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
-                            data-original="#000000"></path>
-                    </svg></button><button title="Delete"><svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
-                        <path
-                            d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
-                            data-original="#000000"></path>
-                        <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
-                            data-original="#000000"></path>
-                    </svg></button></td>
-        </tr>
-        <tr class="odd:bg-blue-50">
-            <td class="pl-4 w-8"><input id="checkbox1" type="checkbox" class="hidden peer"><label for="checkbox1"
-                    class="relative flex items-center justify-center p-0.5 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer bg-blue-500 border border-gray-400 rounded overflow-hidden"><svg
-                        xmlns="http://www.w3.org/2000/svg" class="w-full fill-white" viewBox="0 0 520 520">
-                        <path
-                            d="M79.423 240.755a47.529 47.529 0 0 0-36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515L486.588 56.773a6.13 6.13 0 0 1 .128-.2c2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0-19.362 1.343q-.135.166-.278.327L210.887 328.736a10.961 10.961 0 0 1-15.585.843l-83.94-76.386a47.319 47.319 0 0 0-31.939-12.438z"
-                            data-name="7-Check" data-original="#000000"></path>
-                    </svg></label></td>
-            <td class="p-4 text-sm">
-                <div class="flex items-center cursor-pointer w-max"><img src="https://readymadeui.com/profile_3.webp"
-                        class="w-9 h-9 rounded-full shrink-0">
-                    <div class="ml-4">
-                        <p class="text-sm text-black">User2</p>
-                        <p class="text-xs text-gray-500 mt-0.5">abc123example.com</p>
-                    </div>
-                </div>
-            </td>
-            <td class="p-4 text-sm text-black">
-                <div class="div-color" style="background-color: blue;"></div>
-            </td>
-            <td class="p-4 text-sm text-black">User</td>
-            <td class="p-4"><label class="relative cursor-pointer"><input type="checkbox" class="sr-only peer">
-                    <div
-                        class="w-11 h-6 flex items-center bg-gray-300 rounded-full peer peer-checked:after:translate-x-full after:absolute after:left-[2px] peer-checked:after:border-white after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#007bff]">
-                    </div>
-                </label></td>
-            <td class="p-4"><button class="mr-4" title="Edit"><svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 fill-blue-500 hover:fill-blue-700" viewBox="0 0 348.882 348.882">
-                        <path
-                            d="m333.988 11.758-.42-.383A43.363 43.363 0 0 0 304.258 0a43.579 43.579 0 0 0-32.104 14.153L116.803 184.231a14.993 14.993 0 0 0-3.154 5.37l-18.267 54.762c-2.112 6.331-1.052 13.333 2.835 18.729 3.918 5.438 10.23 8.685 16.886 8.685h.001c2.879 0 5.693-.592 8.362-1.76l52.89-23.138a14.985 14.985 0 0 0 5.063-3.626L336.771 73.176c16.166-17.697 14.919-45.247-2.783-61.418zM130.381 234.247l10.719-32.134.904-.99 20.316 18.556-.904.99-31.035 13.578zm184.24-181.304L182.553 197.53l-20.316-18.556L294.305 34.386c2.583-2.828 6.118-4.386 9.954-4.386 3.365 0 6.588 1.252 9.082 3.53l.419.383c5.484 5.009 5.87 13.546.861 19.03z"
-                            data-original="#000000"></path>
-                        <path
-                            d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
-                            data-original="#000000"></path>
-                    </svg></button><button title="Delete"><svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
-                        <path
-                            d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
-                            data-original="#000000"></path>
-                        <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
-                            data-original="#000000"></path>
-                    </svg></button></td>
         </tr>
     </tbody>
 </table>

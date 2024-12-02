@@ -57,3 +57,23 @@
     background: rgb(223, 223, 223);
     margin: 15px 0px;
 }
+#btn-checkout {
+    color: white !important;
+}
+
+.fixed-height {
+    height: 350px; /* Hoặc chiều cao bạn mong muốn */
+}
+
+.aspect-h-4 {
+    height: 250px; /* Chiều cao cho thẻ chứa ảnh lớn */
+}
+
+.aspect-h-2 {
+    height: 150px; /* Chiều cao cho thẻ chứa ảnh nhỏ */
+}
+
+/* Nếu bạn muốn đảm bảo rằng các thẻ khác nhau có chiều cao đồng nhất */
+.aspect-h-2, .aspect-h-4 {
+    overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài */
+}
