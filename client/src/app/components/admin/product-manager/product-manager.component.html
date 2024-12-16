@@ -32,8 +32,8 @@
                     </div>
                 </td>
                 <td class="text-sm leading-normal">{{ item.category.name }}</td>
-                <td class="text-sm leading-normal">${{ item.price }}</td>
-                <td class="text-sm leading-normal">{{ item.deposit }}</td>
+                <td class="text-sm leading-normal">{{ item.formattedPrice }}</td>
+                <td class="text-sm leading-normal">{{ item.formattedDeposit }}</td>
                 <td class="p-4">
                     <a routerLink="edit/{{item.id}}">
                         <button class="mr-4" title="Edit">

@@ -2,25 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProductService } from '../../../service/admin/product/product.service';
 import { CommonModule } from '@angular/common';
+import { CurrencyFormatService } from '../../../service/currency-format-service.service';
 
 @Component({
   selector: 'app-product-manager',
   standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './product-manager.component.html',
-  styleUrls: ['./product-manager.component.css'] // Chỉnh sửa ở đây
+  styleUrls: ['./product-manager.component.css'] 
 })
 export class ProductManagerComponent implements OnInit {
-  products: any = []; // Sửa kiểu dữ liệu cho rõ ràng
-  lists: any[] = []; // Khai báo biến lists
-  constructor(private productsService: ProductService) { } // Đóng dấu ngoặc nhọn ở đây
+  products: any = []; 
+  lists: any[] = []; 
+  constructor(private productsService: ProductService,
+    private formatCurrency: CurrencyFormatService,
+  ) { } 
 
   ngOnInit() {
     this.productsService.getAllProducts().subscribe(data => {
       this.products = data;
-      this.lists = this.products.data;
-      // console.log('list products', this.lists);
-      
+      this.lists = this.products.data;   
+      this.lists.forEach(item => {
+        item.formattedPrice = this.formatCurrency.formatCurrency(item.price); 
+        item.formattedDeposit = this.formatCurrency.formatCurrency(item.deposit); 
+      });   
     });
   }
 

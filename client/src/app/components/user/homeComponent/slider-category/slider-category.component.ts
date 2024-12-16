@@ -10,7 +10,7 @@ import { CategoryService } from '../../../../service/admin/category/category.ser
   templateUrl: './slider-category.component.html',
   styleUrl: './slider-category.component.css'
 })
-export class SliderCategoryComponent implements AfterViewInit, OnInit {
+export class SliderCategoryComponent implements OnInit {
     categories: any = []; 
     constructor(
         private renderer: Renderer2, 
@@ -30,41 +30,23 @@ export class SliderCategoryComponent implements AfterViewInit, OnInit {
 
 
   private slider: HTMLElement | null = null;
-  private prevBtn: HTMLElement | null = null;
-  private nextBtn: HTMLElement | null = null;
   private currentIndex: number = 0;
   private slidesPerView: number = 7;
   private totalSlides: number = 0;
 
 
-  ngAfterViewInit() {
-      this.slider = this.el.nativeElement.querySelector('#slider-category');
-      this.prevBtn = this.el.nativeElement.querySelector('#prevBtnCate');
-      this.nextBtn = this.el.nativeElement.querySelector('#nextBtnCate');
 
-      if (this.slider && this.prevBtn && this.nextBtn) {
-          this.totalSlides = this.slider.children.length;
-          
-          this.renderer.listen(this.prevBtn, 'click', () => this.prevSlide());
-          this.renderer.listen(this.nextBtn, 'click', () => this.nextSlide());
-
-          // Chỉ thêm sự kiện resize nếu đang ở môi trường trình duyệt
-          if (isPlatformBrowser(this.platformId)) {
-              window.addEventListener('resize', () => this.updateSlider());
-          }
-      } else {
-          console.error('Failed to find necessary HTML elements.');
-      }
-  }
-
-  private prevSlide() {
+  prevSlide() {
+    this.slider = this.el.nativeElement.querySelector('#slider-category');
       if (this.slider && this.currentIndex > 0) {
           this.currentIndex--;
           this.updateSlider();
       }
   }
 
-  private nextSlide() {    
+  nextSlide() {    
+    this.slider = this.el.nativeElement.querySelector('#slider-category');
+    this.totalSlides = this.slider?.children.length ?? 0;
       if (this.slider && this.currentIndex < this.totalSlides - this.slidesPerView) {
           this.currentIndex++;
           this.updateSlider();

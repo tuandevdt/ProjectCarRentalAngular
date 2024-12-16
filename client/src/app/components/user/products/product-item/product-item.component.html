@@ -1,28 +1,24 @@
 <div class="bg-white rounded-lg shadow-md p-4">
     <div class="flex items-center mb-4">
-        <a routerLink="/products/{{id}}" class="block max-h-[180px] overflow-hidden rounded-md">
-            <img src="{{url}}" alt="Vinfast VF8 Plus 2022" class="w-full object-cover rounded-t-md">
+        <a routerLink="/products/{{productId}}" class="block max-h-[180px]  overflow-hidden rounded-md">
+            <img src="{{url}}" alt="Vinfast VF8 Plus 2022" class="w-full min-h-[180px] object-cover rounded-t-md">
         </a>
     </div>
     <div class="bg-white rounded-lg">
         <div class="flex items-center mb-4">
             <div>
                 <h3 class="text-lg font-bold">{{name}}</h3>
-                <p class="text-gray-500 text-sm">Quận 1</p>
+                <p class="text-gray-500 text-sm">{{city}}</p>
             </div>
         </div>
         <div class="items-center mb-4">
-            <p class="line-through text-gray-500 mr-2">{{getFormatPrice((price * 2))}}</p>
-            <p class="text-xl text-green-500 font-bold mb-4">{{ getFormatPrice(price) }}/<small>24h</small></p>
-            <div class="flex items-center">
-                <i class='bx bx-user text-green-500'></i>
-
-            </div>
+            <p class="line-through text-gray-500 mr-2">{{formattedInitPrice}}</p>
+            <p class="text-xl text-green-500 font-bold mb-4">{{ formattedPrice }}/<small>24h</small></p>
             <hr>
             <div class="flex justify-between items-center gap-4 mt-4">
                 <div class="flex items-center">
                     <i class='bx bx-user text-green-500'></i>
-                    <p class="max-w-full truncate">5 chỗ</p>
+                    <p class="max-w-full truncate">{{seats}}</p>
                 </div>
                 <div class="flex items-center">
                     <i class='bx bx-scatter-chart text-green-500'></i>

@@ -11,7 +11,7 @@ import { SliderItemComponent } from '../slider/slider-item/slider-item.component
   templateUrl: './slider-hot.component.html',
   styleUrl: './slider-hot.component.css'
 })
-export class SliderHotComponent implements AfterViewInit, OnInit {
+export class SliderHotComponent implements OnInit {
     products: any = [];
     lists: any = [];
   private slider: HTMLElement | null = null;
@@ -32,37 +32,21 @@ export class SliderHotComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe(data => {
         this.products = data;
-        this.lists = this.products.data;
+        this.lists = this.products.data.filter((product: any) => product.city === 'Hồ Chí Minh');
       });
 }
-  ngAfterViewInit() {
-      this.slider = this.el.nativeElement.querySelector('#sliderHot');
-      this.prevBtn = this.el.nativeElement.querySelector('#prevBtnHot');
-      this.nextBtn = this.el.nativeElement.querySelector('#nextBtnHot');
 
-      if (this.slider && this.prevBtn && this.nextBtn) {
-          this.totalSlides = this.slider.children.length;
-          
-          this.renderer.listen(this.prevBtn, 'click', () => this.prevSlide());
-          this.renderer.listen(this.nextBtn, 'click', () => this.nextSlide());
-
-          // Chỉ thêm sự kiện resize nếu đang ở môi trường trình duyệt
-          if (isPlatformBrowser(this.platformId)) {
-              window.addEventListener('resize', () => this.updateSlider());
-          }
-      } else {
-          console.error('Failed to find necessary HTML elements.');
-      }
-  }
-
-  private prevSlide() {
+  prevSlide() {
+    this.slider = this.el.nativeElement.querySelector('#sliderHot');
       if (this.slider && this.currentIndex > 0) {
           this.currentIndex--;
           this.updateSlider();
       }
   }
 
-  private nextSlide() {    
+  nextSlide() {    
+    this.slider = this.el.nativeElement.querySelector('#sliderHot');
+    this.totalSlides = this.slider?.children.length ?? 0;
       if (this.slider && this.currentIndex < this.totalSlides - this.slidesPerView) {
           this.currentIndex++;
           this.updateSlider();

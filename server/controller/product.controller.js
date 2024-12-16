@@ -1,5 +1,11 @@
 const { resErrors, resData } = require("./common/common");
-const { getAllProducts, createProduct, updateProduct, deleteProduct, findProductById } = require("../service/productService");
+const { getAllProducts, 
+  createProduct, 
+  updateProduct, 
+  deleteProduct, 
+  findProductById, 
+  findProductsByCategoryId 
+} = require("../service/productService");
 
 class ApiAdminProductController {
   static async index(req, res) {
@@ -26,7 +32,16 @@ class ApiAdminProductController {
     try {
       const {id} = req.params;
       const product = await findProductById(id);
-      return res.json(product);s
+      return res.json(product);
+    } catch (error) {
+      resErrors(res, 500, error.message);
+    }
+  }
+  static async getProductsByCategoryId(req, res) {
+    try {
+      const {id} = req.params;
+      const products = await findProductsByCategoryId(id);
+      return res.json(products);
     } catch (error) {
       resErrors(res, 500, error.message);
     }

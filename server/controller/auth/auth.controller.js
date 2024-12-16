@@ -35,31 +35,7 @@ class ApiAuthController {
     }
   }
 
-  static async fetchData(req, res) {
-    try {
-      const id = req.user.id; // Lấy ID từ request đã được xác thực
-      const user = await db.User.findByPk(id); // Lấy thông tin người dùng từ DB
   
-      if (!user) {
-        return resErrors(res, 400, "Không tìm thấy người dùng");
-      }
-  
-      res.json({
-        id: user.id,
-        username: user.username,
-        email: user.email,
-        role: user.role,
-      });
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-      resErrors(res, 500, error.message || "Internal Server Error");
-    }
-  }
-
-  static async logout(req, res) {
-    res.clearCookie('accessToken', { path: '/' });
-    res.sendStatus(200);
-  }
   static newToken(req, res) {
     try {
       const { refreshToken } = req.body;   
@@ -67,8 +43,6 @@ class ApiAuthController {
         return res.status(401).json({ message: "No refresh token provided" });
       }
   
-  
-      // Xác thực Refresh Token
       jwt.verify(refreshToken, "TuanDevRefreshToken", (err, user) => {
         if (err) {
           return res.status(403).json({ message: "Invalid refresh token" });
@@ -77,7 +51,7 @@ class ApiAuthController {
         const accessToken = jwt.sign(
           {
             id: user.dataValues.id,
-            role: user.dataValues.role,
+            username: user.dataValues.username,
           },
           "TuanDevAccessToken",
           { expiresIn: "1h" }

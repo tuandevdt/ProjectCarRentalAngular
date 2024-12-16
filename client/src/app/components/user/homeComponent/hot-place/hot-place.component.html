@@ -1,7 +1,10 @@
 <div class="grid grid-cols-2 gap-10 max-w-[92%] mx-auto">
 
-    <div><app-hot-place-item></app-hot-place-item></div>
-    <div><app-hot-place-item></app-hot-place-item></div>
+    <div *ngFor="let item of cities">
+        <app-hot-place-item [name]="item.name" [image]="item.image"></app-hot-place-item>
+      </div>
+      
+    <!-- <div><app-hot-place-item></app-hot-place-item></div> -->
 
 
 </div>

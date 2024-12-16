@@ -80,8 +80,12 @@ const updateProduct = async (data, id) => {
 }
 
 const findProductById = async (id) => {
+  console.log('id product', id);
+  
   try {
     const product = await Product.findOne({where: {id}})
+    console.log('product',product);
+    
     return product;
   } catch (error) {
     console.error("Error update categories", error)
@@ -89,6 +93,15 @@ const findProductById = async (id) => {
   }
 }
 
+const findProductsByCategoryId = async (categoryId) => {
+  try {
+    const products = await Product.findAll({where: {categoryId}})
+    return products;
+  } catch (error) {
+    console.error("Error update categories", error)
+    throw error;
+  }
+}
 const deleteProduct= async (id) => {
   try {
       
@@ -105,4 +118,5 @@ module.exports = {
   updateProduct,
   deleteProduct,
   findProductById,
+  findProductsByCategoryId,
 };

@@ -28,27 +28,25 @@ export class FormEditProductComponent implements OnInit {
   ) {
     this.formEditCategoryGroup = this.formBuilder.group({
       nameControl: ['', Validators.required],
-      priceControl: ['', [Validators.required, Validators.min(0)]],
-      depositControl: ['', [Validators.required, Validators.min(0)]],
-      addressControl: ['', Validators.required],
-      descriptionControl: ['', Validators.required],
-      categoryIdControl: ['', Validators.required],
-      image1Control: ['', Validators.required],
-      image2Control: [''],
-      image3Control: [''],
-      image4Control: [''],
-      cityControl: ["", Validators.required],
-      typeControl: [""],
-      seatsControl: ["", Validators.required],
+  priceControl: ['', Validators.required],
+  depositControl: ['', Validators.required],
+  addressControl: ['', Validators.required],
+  descriptionControl: ['', Validators.required],
+  categoryIdControl: ['', Validators.required],
+  cityControl: ['', Validators.required],
+  typeControl: ['', Validators.required],
+  seatsControl: ['', Validators.required],
+  image1Control: ['', Validators.required],
+  image2Control: [''],
+  image3Control: [''],
+  image4Control: ['']
     });
   }
 
   ngOnInit(): void {
-    // Lấy ID sản phẩm từ params
  const id = this.route.snapshot.paramMap.get('id');
  this.productId = Number(id);
 
-    // Tải danh sách danh mục
     this.categoryService.getAllCategories().subscribe(categories => {
       this.categories = categories;
     });
@@ -75,7 +73,16 @@ export class FormEditProductComponent implements OnInit {
   }
 
   onEditSubmit() {
+    console.log("Form Submit Clicked");
+    if(this.formEditCategoryGroup.invalid) {
+      if (this.formEditCategoryGroup.get('typeControl')?.invalid) {
+        alert('Please select a Type!');
+      }
+      return;
+    }
     if (this.formEditCategoryGroup.valid) {
+      console.log('hi');
+      
       const updatedProduct = {
         id: this.productId,
         ...this.formEditCategoryGroup.value
@@ -85,6 +92,8 @@ export class FormEditProductComponent implements OnInit {
       this.productService.updateProduct(updatedProduct, this.productId).subscribe(() => {
         this.router.navigate(['/admin/products']); // Chuyển hướng về danh sách sản phẩm
       });
+    } else {
+      console.log('Form is invalid');
     }
   }
 }

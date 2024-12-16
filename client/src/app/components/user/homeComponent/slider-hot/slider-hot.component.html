@@ -14,17 +14,20 @@
                 [image2]="item.image2"
                 [image3]="item.image3"
                 [image4]="item.image4"
+                [city]="item.city"
+                [seats]="item.seats"
+                [type]="item.type"
                 >
                 </app-slider-item> <!-- Truyền item vào component -->
             </div>
         </div>
     </div>
-    <button id="prevBtnHot" class="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 focus:outline-none">
+    <button id="prevBtnHot" (click)="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
     </button>
-    <button id="nextBtnHot" class="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 focus:outline-none">
+    <button id="nextBtnHot" (click)="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>

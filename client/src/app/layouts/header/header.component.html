@@ -34,7 +34,7 @@
         <li class='max-lg:border-b max-lg:py-3 px-3'><a routerLink='javascript:void(0)'
             class='hover:text-[#007bff] text-gray-600 font-bold block text-base'>Contact</a>
         </li>
-        <li class='max-lg:border-b max-lg:py-3 px-3'><a routerLink='/admin/dashboard'
+        <li *ngIf="isLogin" class='max-lg:border-b max-lg:py-3 px-3'><a routerLink='/admin/dashboard'
             class='hover:text-[#007bff] text-gray-600 font-bold block text-base'>Admin</a>
         </li>
       </ul>
@@ -49,7 +49,7 @@
               <circle cx="10" cy="7" r="6" data-original="#000000" />
               <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000" />
           </svg>
-            <span>{{name}}</span>
+            <span>{{user.username}}</span>
           </label>
           <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden peer-checked:block">
               <ul class="py-1">
@@ -70,11 +70,8 @@
   </div>
     <div *ngIf="!isLogin" >
       <button class="bg-blue-500 mr-4 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
-        <a routerLink="/login">Login</a>
+        <a routerLink="/login">Login Admin</a>
     </button>
-      <span class="font-bold py-2 px-4">
-        <a routerLink="">About Us</a>
-    </span>
     </div>
   </div>
 </header>

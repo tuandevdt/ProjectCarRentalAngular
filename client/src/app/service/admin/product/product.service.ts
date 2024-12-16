@@ -15,6 +15,10 @@ export class ProductService {
     return this.http.get(this.url);
   }
 
+  getProductsByCategory(id: number) {
+    return this.http.get(`${this.url}/category/${id}`)
+  }
+
   updateProduct(data: any, id: number) {
     return this.http.patch(`${this.url}/${id}`, data); 
   }

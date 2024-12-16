@@ -9,13 +9,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RootComponent } from './root/root.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { DetailComponent } from './components/user/detail/detail.component';
-import { UserManagerComponent } from './components/admin/user-manager/user-manager.component';
 import { CategoryManagerComponent } from './components/admin/category-manager/category-manager.component';
 import { ProductManagerComponent } from './components/admin/product-manager/product-manager.component';
 import { OrderManagerComponent } from './components/admin/order-manager/order-manager.component';
 import { CheckoutComponent } from './components/user/checkout/checkout.component';
 import { MyCheckoutComponent } from './components/user/my-checkout/my-checkout.component';
-
 
 @Component({
   selector: 'app-root',
@@ -25,23 +23,21 @@ import { MyCheckoutComponent } from './components/user/my-checkout/my-checkout.c
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent, 
+    LoginComponent,
     ProductsComponent,
     DetailComponent,
     PageNotFoundComponent,
     RootComponent,
     DashboardComponent,
-    UserManagerComponent,
     CategoryManagerComponent,
     ProductManagerComponent,
     OrderManagerComponent,
     CheckoutComponent,
-    MyCheckoutComponent
+    MyCheckoutComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'client';
-
 }

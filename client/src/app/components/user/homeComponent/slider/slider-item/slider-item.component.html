@@ -2,26 +2,26 @@
     <div class="flex items-center mb-4">
         <a href="/products/{{id}}" class="block max-h-[180px] overflow-hidden rounded-md">
             <img src={{image1}}
-                alt="Vinfast VF8 Plus 2022" class="w-full object-cover rounded-t-md">
+                alt="Vinfast VF8 Plus 2022" class="w-full min-h-[180px] object-cover rounded-t-md">
         </a>
     </div>
     <div class="bg-white rounded-lg">
         <div class="flex items-center mb-4">
             <div>
                 <h3 class="text-lg font-bold">{{name}}</h3>
-                <p class="text-gray-500 text-sm">Đà Nẵng</p>
+                <p class="text-gray-500 text-sm">{{city}}</p>
             </div>
         </div>
         <div class="flex items-center mb-4">
-            <p class="line-through text-gray-500 mr-2">{{price * 1.5}} đ</p>
-            <p class="text-xl text-green-500 font-bold">{{price}}/<small>24h</small></p>
+            <p class="line-through text-gray-500 mr-2">{{initFormatPrice}}</p>
+            <p class="text-xl text-green-500 font-bold">{{formatPrice}}/<small>24h</small></p>
         </div>
     </div>
     <hr>
     <div class="flex justify-between items-center gap-4">
         <div class="flex items-center">  
         <i class='bx bx-user text-green-500'></i>
-        <p class="max-w-full truncate">5 chỗ</p>
+        <p class="max-w-full truncate">{{seats}}</p>
         </div>
         <div class="flex items-center">
         <i class='bx bx-scatter-chart text-green-500'></i>
@@ -29,7 +29,12 @@
         </div>
         <div class="flex items-center">
         <i class='bx bxs-ev-station text-green-500'></i>
-        <p class="max-w-full truncate">Điện</p>
+        <p [ngSwitch]="type" class="max-w-full truncate">
+            <span *ngSwitchCase="'electric'">Điện</span>
+            <span *ngSwitchCase="'diesel'">Dầu</span>
+            <span *ngSwitchCase="'gasoline'">Xăng</span>
+            <span *ngSwitchDefault>Không xác định</span>
+          </p>
         </div>
         </div>
 </div>

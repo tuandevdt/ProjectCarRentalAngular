@@ -4,7 +4,7 @@
       <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <li>
           <div class="flex items-center">
-            <a href="#" class="mr-2 text-sm font-medium text-gray-900">Men</a>
+            <a href="#" class="mr-2 text-sm font-medium text-gray-900">Retal</a>
             <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true"
               class="h-5 w-4 text-gray-300">
               <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
@@ -13,7 +13,7 @@
         </li>
         <li>
           <div class="flex items-center">
-            <a href="#" class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
+            <a href="#" class="mr-2 text-sm font-medium text-gray-900">Car</a>
             <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true"
               class="h-5 w-4 text-gray-300">
               <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
@@ -58,8 +58,8 @@
         <div class="w-full flex lg:col-span-2 lg:pr-8 items-center justify-between">
           <div>
             <div class="flex lg:col-span-2 lg:pr-8 items-center">
-              <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{product.name}}</h1> <img
-                alt="Thuê xe tự lái thoải mái bonbon | Bonboncar"
+              <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{product.name}}</h1>
+              <img *ngIf="product.price > 1500000" alt="Thuê xe tự lái thoải mái bonbon | Bonboncar"
                 src="https://www.bonboncar.vn/_next/image?url=%2Ficons%2Ficon-xe-xin.png&w=96&q=75" class="ml-4 h-6">
             </div>
             <span id="location"><i class='bx bxs-location-plus'></i> {{product.address}}</span>
@@ -264,23 +264,23 @@
         <div class="bg-white rounded-lg max-w-md mx-auto">
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div class="flex flex-col items-center">
-              <span class="w-full line-through text-gray-500"><small>{{product.price / 3.2}} đ/4 giờ</small></span>
-              <span class="w-full font-medium text-[#0CAF7F]"><span class="text-2xl">{{product.price /4}}</span>/4
+              <span class="w-full line-through text-gray-500"><small>{{initPrice4h}}/4 giờ</small></span>
+              <span class="w-full font-medium text-[#0CAF7F]"><span class="text-2xl">{{formatPrice4h}}</span>/4
                 giờ</span>
             </div>
             <div class="flex flex-col items-center">
-              <span class="w-full line-through text-gray-500"><small>{{product.price / 2}} đ/8 giờ</small></span>
-              <span class="w-full text-gray-500"><span>{{product.price / 2.5}} đ</span>/8 giờ</span>
+              <span class="w-full line-through text-gray-500"><small>{{initPrice8h}} đ/8 giờ</small></span>
+              <span class="w-full text-gray-500"><span>{{formatPrice8h}}</span>/8 giờ</span>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div class="flex flex-col items-center">
-              <span class="w-full line-through text-gray-500"><small>{{product.price}} đ/12 giờ</small></span>
-              <span class="w-full text-gray-500"><span>{{product.price}} đ</span>/12 giờ</span>
+              <span class="w-full line-through text-gray-500"><small>{{initPrice12h}} đ/12 giờ</small></span>
+              <span class="w-full text-gray-500"><span>{{formatPrice12h}}</span>/12 giờ</span>
             </div>
             <div class="flex flex-col items-center">
-              <span class="w-full line-through text-gray-500"><small>{{product.price}} đ/12 giờ</small></span>
-              <span class="w-full text-gray-500"><span>{{product.price}} đ</span>/12 giờ</span>
+              <span class="w-full line-through text-gray-500"><small>{{initPrice24h}}/24 giờ</small></span>
+              <span class="w-full text-gray-500"><span>{{formatPrice24h}}</span>/24 giờ</span>
             </div>
           </div>
         </div>
@@ -290,90 +290,98 @@
           <!-- Reviews -->
           <div class="mt-6 overflow-hidden">
             <div class="w-full bg-white rounded-lg">
-                <div class="mb-4">
-                    <h3 class="font-bold text-xl">Thời gian thuê</h3>
-                    <div class="gap-4">
-                        <h1 class="font-bold text-lg">Từ</h1>
-                        <div class="flex relative border border-gray-300 rounded-lg">
-                            <div class="w-full">
-                                <input type="date" name="startDate" [(ngModel)]="rentalData.startDate"
-                                       class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <i class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                                <div *ngIf="isStart" class="text-red-500 text-sm">
-                                  Trường này là bắt buộc.
-                              </div>
-                              </div>
-                            <div class="w-full">
-                                <input type="time" name="startTime" [(ngModel)]="rentalData.startTime"
-                                       class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <i class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                              </div>
-                        </div>
-                        <h1 class="font-bold text-lg">Đến</h1>
-                        <div class="flex relative border border-gray-300 rounded-lg">
-                            <div class="w-full">
-                                <input type="date" name="endDate" [(ngModel)]="rentalData.endDate"
-                                       class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <i class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                                <div *ngIf="isEnd" class="text-red-500 text-sm">
-                                  Trường này là bắt buộc.
-                              </div>
-                              </div>
-                            <div class="w-full">
-                                <input type="time" name="endTime" [(ngModel)]="rentalData.endTime"
-                                       class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <i class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                            </div>
-                        </div>
-                    </div>
+              <div class="mb-4">
+                <div *ngIf="showBusyTime" class="flex flex-col items-center w-full">
+                  <small class="text-red-500 text-center">Xe bận trong khoảng thời gian</small>
+                  <div *ngFor="let busyTime of busyTimes">
+                    <h6 class="text-red-500 text-center">{{ busyTime }}</h6>
+                  </div>
                 </div>
+
+
+                <h3 class="font-bold text-xl mt-4">Thời gian thuê</h3>
+                <div class="gap-4">
+                  <h1 class="font-bold text-lg">Từ</h1>
+                  <div class="flex relative border border-gray-300 rounded-lg">
+                    <div class="w-full">
+                      <input type="date" name="startDate" [(ngModel)]="rentalData.startDate"
+                        (change)="calculateRentalPrice()"
+                        class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <i
+                        class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                      <div *ngIf="isStart" class="text-red-500 text-sm">
+                        Trường này là bắt buộc.
+                      </div>
+                    </div>
+                    <div class="w-full">
+                      <input type="time" name="startTime" [(ngModel)]="rentalData.startTime"
+                        (change)="calculateRentalPrice()"
+                        class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <i class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                    </div>
+                  </div>
+                  <h1 class="font-bold text-lg">Đến</h1>
+                  <div class="flex relative border border-gray-300 rounded-lg">
+                    <div class="w-full">
+                      <input type="date" name="endDate" [(ngModel)]="rentalData.endDate"
+                        (change)="calculateRentalPrice()"
+                        class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <i
+                        class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                      <div *ngIf="isEnd" class="text-red-500 text-sm">
+                        Trường này là bắt buộc.
+                      </div>
+                    </div>
+                    <div class="w-full">
+                      <input type="time" name="endTime" [(ngModel)]="rentalData.endTime"
+                        (change)="calculateRentalPrice()"
+                        class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <i class="fas fa-clock absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                    </div>
+
+                  </div>
+                  <div class="text-red-500 text-sm" *ngIf="errorMessage">
+                    {{ errorMessage }}
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4">
-          <div class="flex items-center space-x-2">
+          </div>
+          <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4">
+            <div class="flex items-center space-x-2">
               <input type="radio" name="pickup" id="pickupLocation" [(ngModel)]="selectedOption" value="pickup">
               <span class="font-medium">Nhận xe tại vị trí xe</span>
               <input type="hidden" name="id" [(ngModel)]="id" value="{{product.id}}">
-          </div>
-          <div class="mt-4">
+            </div>
+            <div class="mt-4">
               <p class="font-medium">{{product.address}}</p>
-              <p class="text-gray-500 text-sm">Địa điểm cụ thể sẽ được hiện thị sau khi thanh toán thành công, và thời gian lấy xe 24/24</p>
+              <p class="text-gray-500 text-sm">Địa điểm cụ thể sẽ được hiện thị sau khi thanh toán thành công, và thời
+                gian lấy xe 24/24</p>
+            </div>
           </div>
-      </div>
-      
-      <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4 mt-4">
-          <div class="flex items-center space-x-2">
+
+          <div class="bg-white border border-[#0CAF7F] shadow-md rounded-lg p-4 mt-4">
+            <div class="flex items-center space-x-2">
               <input type="radio" name="pickup" id="deliveryLocation" [(ngModel)]="selectedOption" value="delivery">
               <h3 class="font-medium">Giao xe tận nơi</h3>
-          </div>
-          <p class="text-gray-500 text-sm mt-2">Chọn địa điểm</p>
-          
-          <!-- Input địa chỉ chỉ hiển thị khi chọn giao xe tận nơi -->
-          <div *ngIf="selectedOption === 'delivery'" class="mt-2">
+            </div>
+            <p class="text-gray-500 text-sm mt-2">Chọn địa điểm</p>
+
+            <!-- Input địa chỉ chỉ hiển thị khi chọn giao xe tận nơi -->
+            <div *ngIf="selectedOption === 'delivery'" class="mt-2">
               <input type="text" name="delivery" [(ngModel)]="deliveryAddress" placeholder="Nhập địa chỉ giao xe"
-                     class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
+                class="border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
+            </div>
+            <div *ngIf="isValidAddress" class="text-red-500 text-sm">
+              Trường này là bắt buộc.
+            </div>
           </div>
-          <div *ngIf="isValidAddress" class="text-red-500 text-sm">
-            Trường này là bắt buộc.
-        </div>
-      </div>
           <div class="bg-white shadow-md rounded-lg p-4 mt-4">
             <div class="flex items-center justify-between">
               <span class="font-medium">Phí thuê xe</span>
-              <span>{{product.price}} vnđ</span>
+              <span>{{ rentalPrice | currency: 'VND' }}</span>
             </div>
-            <div class="linner-gray"></div>
-            <div class="flex items-center justify-between">
-              <h3 class="font-medium">Chọn hoặc nhập mã khuyến mãi</h3>
-              <i class="bx bx-help-circle text-gray-400 cursor-pointer"></i>
-            </div>
-            <div class="mt-4">
-              <div class="flex items-center border rounded-md px-2 py-1">
-                <input type="text" class="flex-1 focus:outline-none" placeholder="Nhập mã khuyến mãi">
-                <button class="bg-[#0CAF7F] text-white px-3 py-2 rounded-md hover:bg-[#0ba778] transition-colors">Áp
-                  dụng</button>
-              </div>
-            </div>
+
             <div class="linner-gray"></div>
             <div class="w-full">
               <div class="flex items-center justify-between">
@@ -382,17 +390,17 @@
               </div>
               <div class="flex items-center justify-between">
                 <small class="font-medium">Thuế VAT</small>
-                <span>{{product.price*0.2}} đ</span>
+                <span>{{priceVAT}}</span>
               </div>
               <div class="flex items-center justify-between">
                 <small class="font-medium">Tổng cộng tiền thuê</small>
-                <span>{{+product.price + product.price*0.2 }} đ</span>
+                <span>{{sumPriceRental }}</span>
               </div>
               <small class="text-gray-500">Tiền giữ chỗ sẽ không được hoàn lại nếu huỷ chuyến. Tiền giữ chỗ sẽ được hoàn
                 lại sau khi trả xe.</small>
               <div class="flex items-center justify-between">
                 <small class="font-medium">Cọc xe</small>
-                <span>{{product.price > 2000000 ? 40000000 : 30000000}} đ</span>
+                <span>{{depositPrice}}</span>
               </div>
               <small class="text-gray-500">Thanh toán sau khi nhận và kiểm tra xe, không nhận cọc xe máy.</small>
               <button type="submit"

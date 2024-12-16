@@ -28,13 +28,13 @@ export class FormNewProductComponent implements OnInit {
       addressControl: ['', Validators.required],
       descriptionControl: ['', Validators.required],
       categoryIdControl: ['', Validators.required],
+      cityControl: ['', Validators.required],
+      typeControl: ['', Validators.required],
+      seatsControl: ['', Validators.required], 
       image1Control: ['', Validators.required],
       image2Control: [''],
       image3Control: [''],
-      image4Control: [''],
-      cityControl: ["", Validators.required],
-      typeControl: [""],
-      seatsControl: ["", Validators.required],
+      image4Control: ['']
     });
   }
 
@@ -45,6 +45,10 @@ export class FormNewProductComponent implements OnInit {
   }
 
   onEditSubmit() {
+    if (this.formEditCategoryGroup.invalid) {
+      alert('Please fill in all required fields!');
+      return;
+    }
     if (this.formEditCategoryGroup.valid) {
       const formData = this.formEditCategoryGroup.value;
 
@@ -68,7 +72,7 @@ export class FormNewProductComponent implements OnInit {
         next: (data) => {
           console.log('Product created:', data);
           this.formEditCategoryGroup.reset();
-          this.router.navigate(['/admin/products']); // Chuyển hướng về trang sản phẩm
+          this.router.navigate(['/admin/products']); 
         },
         error: (error) => {
           console.error('Error adding product:', error);
@@ -80,6 +84,6 @@ export class FormNewProductComponent implements OnInit {
   }
 
   closeEditModal() {
-    this.formEditCategoryGroup.reset(); // Đặt lại form khi đóng modal
+    this.formEditCategoryGroup.reset(); 
   }
 }

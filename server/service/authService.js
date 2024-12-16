@@ -58,6 +58,7 @@ const login = async (email, password) => {
       const refreshToken = jwt.sign(
         {
           id: check.dataValues.id,
+          username: check.dataValues.username,
         },
         "TuanDevRefreshToken",
         { expiresIn: "3d" }

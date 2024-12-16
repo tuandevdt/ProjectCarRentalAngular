@@ -26,7 +26,6 @@ export class CategoryManagerComponent implements OnInit {
   currentEditId: number | null = null;
 
   constructor(private listService: CategoryService, private fb: FormBuilder) {
-    // Khởi tạo form cho việc chỉnh sửa
     this.formEditCategoryGroup = this.fb.group({
       categoryNameControl: ['', Validators.required],
       categoryImageControl: ['', Validators.required],
@@ -49,7 +48,7 @@ export class CategoryManagerComponent implements OnInit {
 
   openEditModal(item: any) {
     this.isEditModalOpen = true;
-    this.currentEditId = item.id; // Lưu id của danh mục để chỉnh sửa
+    this.currentEditId = item.id;
     this.formEditCategoryGroup.patchValue({
       categoryNameControl: item.name,
       categoryImageControl: item.image,
@@ -59,8 +58,8 @@ export class CategoryManagerComponent implements OnInit {
 
   closeEditModal() {
     this.isEditModalOpen = false;
-    this.formEditCategoryGroup.reset(); // Đặt lại form khi đóng modal
-    this.currentEditId = null; // Reset id
+    this.formEditCategoryGroup.reset(); 
+    this.currentEditId = null; 
   }
 
   onEditSubmit() {

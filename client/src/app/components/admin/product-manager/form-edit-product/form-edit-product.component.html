@@ -2,37 +2,73 @@
     <div class="modal-content">
         <h2 class="text-xl font-semibold mb-4">Update Product</h2>
         <form [formGroup]="formEditCategoryGroup" (ngSubmit)="onEditSubmit()">
+            <!-- Product Name -->
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">Product Name</label>
                 <input id="name" formControlName="nameControl" type="text" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                <div *ngIf="formEditCategoryGroup.get('nameControl')?.invalid && formEditCategoryGroup.get('nameControl')?.touched" class="text-red-500 text-sm">
+                    Product Name is required.
+                </div>
             </div>
+
+            <!-- Price -->
             <div class="mb-4">
                 <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
                 <input id="price" formControlName="priceControl" type="number" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                <div *ngIf="formEditCategoryGroup.get('priceControl')?.invalid && formEditCategoryGroup.get('priceControl')?.touched" class="text-red-500 text-sm">
+                    Price is required.
+                </div>
             </div>
+
+            <!-- Deposit -->
             <div class="mb-4">
                 <label for="deposit" class="block text-sm font-medium text-gray-700">Deposit</label>
                 <input id="deposit" formControlName="depositControl" type="number" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                <div *ngIf="formEditCategoryGroup.get('depositControl')?.invalid && formEditCategoryGroup.get('depositControl')?.touched" class="text-red-500 text-sm">
+                    Deposit is required.
+                </div>
             </div>
+
+            <!-- Address -->
             <div class="mb-4">
                 <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
                 <input id="address" formControlName="addressControl" type="text" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                <div *ngIf="formEditCategoryGroup.get('addressControl')?.invalid && formEditCategoryGroup.get('addressControl')?.touched" class="text-red-500 text-sm">
+                    Address is required.
+                </div>
             </div>
+
+            <!-- Description -->
             <div class="mb-4">
                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                 <textarea id="description" formControlName="descriptionControl" required class="mt-1 block w-full border border-gray-300 rounded-md p-2"></textarea>
+                <div *ngIf="formEditCategoryGroup.get('descriptionControl')?.invalid && formEditCategoryGroup.get('descriptionControl')?.touched" class="text-red-500 text-sm">
+                    Description is required.
+                </div>
             </div>
+
+            <!-- Category -->
             <div class="mb-4">
                 <label for="categoryId" class="block text-sm font-medium text-gray-700">Select Category</label>
                 <select formControlName="categoryIdControl" id="categoryId" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
                     <option value="" disabled>Select Category</option>
                     <option *ngFor="let item of categories" [value]="item.id">{{ item.name }}</option>
                 </select>
+                <div *ngIf="formEditCategoryGroup.get('categoryIdControl')?.invalid && formEditCategoryGroup.get('categoryIdControl')?.touched" class="text-red-500 text-sm">
+                    Category is required.
+                </div>
             </div>
+
+            <!-- City -->
             <div class="mb-4">
                 <label for="city" class="block text-sm font-medium text-gray-700">City</label>
                 <input id="city" formControlName="cityControl" type="text" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                <div *ngIf="formEditCategoryGroup.get('cityControl')?.invalid && formEditCategoryGroup.get('cityControl')?.touched" class="text-red-500 text-sm">
+                    City is required.
+                </div>
             </div>
+
+            <!-- Type -->
             <div class="mb-4">
                 <label for="type" class="block text-sm font-medium text-gray-700">Type</label>
                 <select formControlName="typeControl" id="type" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
@@ -41,27 +77,48 @@
                     <option value="diesel">Diesel</option>
                     <option value="gasoline">Gasoline</option>
                 </select>            
+
             </div>
+            <div *ngIf="formEditCategoryGroup.get('typeControl')?.invalid && formEditCategoryGroup.get('typeControl')?.touched" class="text-red-500 text-sm">
+                Type is required.
+            </div>
+
+            <!-- Seats -->
             <div class="mb-4">
                 <label for="seats" class="block text-sm font-medium text-gray-700">Seats</label>
                 <input id="seats" formControlName="seatsControl" type="text" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                <div *ngIf="formEditCategoryGroup.get('seatsControl')?.invalid && formEditCategoryGroup.get('seatsControl')?.touched" class="text-red-500 text-sm">
+                    Seats are required.
+                </div>
             </div>
+
+            <!-- Image 1 -->
             <div class="mb-4">
                 <label for="image1" class="block text-sm font-medium text-gray-700">Image 1 URL</label>
                 <input id="image1" formControlName="image1Control" type="text" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                <div *ngIf="formEditCategoryGroup.get('image1Control')?.invalid && formEditCategoryGroup.get('image1Control')?.touched" class="text-red-500 text-sm">
+                    Image 1 URL is required.
+                </div>
             </div>
+
+            <!-- Image 2 -->
             <div class="mb-4">
                 <label for="image2" class="block text-sm font-medium text-gray-700">Image 2 URL</label>
                 <input id="image2" formControlName="image2Control" type="text" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
             </div>
+
             <div class="mb-4">
                 <label for="image3" class="block text-sm font-medium text-gray-700">Image 3 URL</label>
                 <input id="image3" formControlName="image3Control" type="text" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
             </div>
+
+            <!-- Image 4 -->
             <div class="mb-4">
                 <label for="image4" class="block text-sm font-medium text-gray-700">Image 4 URL</label>
                 <input id="image4" formControlName="image4Control" type="text" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
             </div>
+
+            <!-- Buttons -->
             <div class="flex justify-end">
                 <button type="button" class="mr-2 text-gray-600 hover:text-gray-800"><a routerLink="/admin/products">Cancel</a></button>
                 <button type="submit" class="bg-blue-600 text-white rounded-md px-4 py-2 hover:bg-blue-700">Save</button>

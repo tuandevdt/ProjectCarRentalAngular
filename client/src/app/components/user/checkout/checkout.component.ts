@@ -28,9 +28,9 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.rentalData = params;
-      console.log('Rental Data:', this.rentalData);
       
       this.infor = this.rentalData;
+      
     });
   }
 
@@ -47,18 +47,19 @@ getFormatPrice(price: any): string {
 
   onSubmit() {
     if(this.userInfor.username == '') {
+      alert("Vui long nhập đầy đủ thông tin")
       this.isUsername = true;
       return;
     } else {
       this.isUsername = false;
     }
     if(this.userInfor.phone == '') {
+      alert("Vui long nhập đầy đủ thông tin")
       this.isPhone = true;
       return;
     } else {
       this.isPhone = false
     }
-
     const userInfor = {
       username: this.userInfor.username,
       phone: this.userInfor.phone,
@@ -68,8 +69,9 @@ getFormatPrice(price: any): string {
       endDate: this.rentalData.endDate,
       sumPrice: (+this.rentalData.price + this.rentalData.price * 0.1),
       id: this.rentalData.id,
+      address: this.rentalData.address,
+      deliveryMethod: this.rentalData.deliveryMethod,
     }
-    console.log(userInfor);
     this.router.navigate(['/mycheckout'], { queryParams: userInfor });
 
   }

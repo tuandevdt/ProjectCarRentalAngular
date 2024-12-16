@@ -1,24 +1,24 @@
 <div class="bg-white rounded-lg shadow-md overflow-hidden">
 
-    <div class="relative">
-
-        <img src="https://www.bonboncar.vn/_next/image?url=%2Ffavorite-city%2Fimage-hcm.png&w=480&q=75"
-            alt="Hồ Chí Minh" class="w-full h-64 object-cover">
-
-        <div class="absolute bottom-4 left-4 bg-white rounded-md px-3 py-2">
-
-            <h3 class="text-lg font-bold">Hồ Chí Minh</h3>
-
-            <p class="text-green-500">500+ xe</p>
-
+        <div class="relative">
+            <a [routerLink]="['/products']" [queryParams]="{ city: name }">
+                <img [src]="image" [alt]="name" class="w-full h-64 object-cover">
+              </a>
+              
+            <div class="absolute bottom-4 left-4 bg-white rounded-md px-3 py-2">
+    
+                <h3 class="text-lg font-bold">{{name}}</h3>
+    
+                <p class="text-green-500">500+ xe</p>
+    
+            </div>
+    
+            <a href="#" class="absolute top-0 right-0 bg-green-500 text-white px-3 py-2 rounded-bl-md">
+    
+                TÌM XE
+    
+            </a>
+    
         </div>
-
-        <a href="#" class="absolute top-0 right-0 bg-green-500 text-white px-3 py-2 rounded-bl-md">
-
-            TÌM XE
-
-        </a>
-
-    </div>
-
+    
 </div>

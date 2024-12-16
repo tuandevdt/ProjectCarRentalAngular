@@ -1,23 +1,46 @@
 <form (ngSubmit)="formAddCategory()" [formGroup]="formAddCategoryGroup" class="w-full bg-white shadow-md p-6">
     <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-full px-3 mb-6">
-            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="categoryName">Category Name</label>
-            <input class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
-                   type="text" name="categoryName" formControlName="categoryNameControl" placeholder="Category Name" required>
+            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
+                for="categoryName">Category Name</label>
+            <input
+                class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
+                type="text" name="categoryName" formControlName="categoryNameControl" placeholder="Category Name"
+                required>
+            <div *ngIf="formAddCategoryGroup.get('categoryNameControl')?.invalid && formAddCategoryGroup.get('categoryNameControl')?.touched"
+                class="text-red-500 text-sm">
+                Category Name is required.
+            </div>
         </div>
+
         <div class="w-full px-3 mb-6">
-            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="description">Description</label>
+            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
+                for="description">Description</label>
             <textarea rows="4"
-                      class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
-                      name="description" formControlName="descriptionControl"></textarea>
+                class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
+                name="description" formControlName="descriptionControl"></textarea>
+            <div *ngIf="formAddCategoryGroup.get('descriptionControl')?.invalid && formAddCategoryGroup.get('descriptionControl')?.touched"
+                class="text-red-500 text-sm">
+                Description is required.
+            </div>
         </div>
+
         <div class="w-full md:w-full px-3 mb-6">
-            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="categoryImage">Image Category</label>
-            <input class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
-                   type="text" name="image" formControlName="categoryImageControl" placeholder="Category Image" required>
+            <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="categoryImage">Image
+                Category</label>
+            <input
+                class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none focus:border-[#98c01d]"
+                type="text" name="image" formControlName="categoryImageControl" placeholder="Category Image" required>
+            <div *ngIf="formAddCategoryGroup.get('categoryImageControl')?.invalid && formAddCategoryGroup.get('categoryImageControl')?.touched"
+                class="text-red-500 text-sm">
+                Image URL is required.
+            </div>
         </div>
+
         <div class="w-full md:w-full px-3 mb-6">
-            <button type="submit" class="appearance-none block w-full bg-green-700 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-green-600 focus:outline-none focus:bg-white focus:border-gray-500">Add Category</button>
+            <button type="submit" [disabled]="formAddCategoryGroup.invalid"
+                class="appearance-none block w-full bg-green-700 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-green-600 focus:outline-none focus:bg-white focus:border-gray-500">Add
+                Category</button>
         </div>
     </div>
 </form>

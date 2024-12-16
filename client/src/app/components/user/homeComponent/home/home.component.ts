@@ -31,15 +31,11 @@ export class HomeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
   }
  ngOnInit(): void {//chỉ gọi 1 lần, gọi khi khởi tạo 
   //  alertHomePage();
-  console.log('ngOnInit');
  }
  ngOnChanges(changes: SimpleChanges): void {//nếu input thay đổi thì gọi onChange
-  console.log('ngOnChanges');
  }
  ngDoCheck(): void { //gọi khi phát hiện thay đổi dữ liệu
-  console.log('ngDoCheck');
  }
  ngOnDestroy(): void {//gọi khi component bị xóa
-  console.log('ngOnDestroy');
  }
 }

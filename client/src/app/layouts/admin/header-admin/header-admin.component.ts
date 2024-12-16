@@ -3,6 +3,7 @@ import { RouterLink, Router } from '@angular/router';
 import { jwtDecode } from "jwt-decode";
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { CommonModule } from '@angular/common';
+import { AuthServiceService } from '../../../service/auth/auth-service.service';
 
 @Component({
   selector: 'app-header-admin',
@@ -12,32 +13,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header-admin.component.css'
 })
 export class HeaderAdminComponent implements OnInit {
-  constructor(private router: Router) { }
-  firstName: string = "Tuấn ";
-  lastName: string = "Admin";
+  constructor(private router: Router, private authService: AuthServiceService) { }
   isLogin = false;
   isActive = true;
   name: string = "";
+  user: any | null = null;
   ngOnInit(): void {
-    if (typeof window !== 'undefined') { 
-      const token = localStorage.getItem("accessToken");
-      const jwtHelper = new JwtHelperService();
-
-      try {
-        if (!jwtHelper.isTokenExpired(token)) {
-          const decoded: any = jwtDecode(token as string);
-          this.isLogin = true;
-          this.name = decoded.username;
-        } else {
-          this.isLogin = false;
-        }
-      } catch (error) {
-        this.isLogin = false;
-      }
+    this.user = this.authService.getUser(); 
+    if(this.user) {
+      this.isLogin = true;
+    } else {
+      this.isLogin = false;
     }
-  }
-  getName() {
-    return this.firstName + this.lastName;
   }
   logout() {
     localStorage.removeItem("accessToken");
